@@ -1,0 +1,168 @@
+
+:root {
+    --color-primary: #547B5A; 
+    --color-secondary: #8C998E; 
+    --color-background: #f7f4ed; 
+    --color-border: #d9d9d9;
+    --color-focus-border: #f0a349;
+    --color-text-dark: #333;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.4;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.cote-gauche {
+  width: 50%;
+}
+
+.cote-droit {
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    align-items: center;
+    /* Centrage vertical */
+    justify-content: center;
+    padding-top: 0; /* Retirer l'ancien padding excessif */
+    min-height: 100vh;
+    background-color: var(--color-background);
+}
+
+.text {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+h1 {
+  color: var(--color-secondary);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  margin-bottom: 0;
+}
+
+strong {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 2.5rem;
+  display: block;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  margin: 0;
+}
+
+.input label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-focus);
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+input {
+  background-color: #ffffff;
+  width: 100%;
+  height: 45px;
+  padding: 0 1rem;
+  border: 1px solid var(--color-focus-border);
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  border-style: solid; 
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--color-focus-border);
+}
+
+div.all {
+  display: flex;
+  flex-direction: row;
+}
+
+div.all > div {
+  margin: 0px;
+}
+
+.buttons {
+    width: 350px;
+    margin-top: 1rem;
+}
+
+.buttons button.log {
+    background-color: var(--color-primary);
+    color: white;
+    width: 100%;
+    padding: 1rem 0;
+    border-radius: 10px; /* Moins arrondi */
+    font-weight: 600;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: block; /* Important pour corriger l'ancien flex-direction: column */
+    margin: 0;
+    margin-bottom: 1.5rem;
+}
+
+hr {
+  display: inline-block;
+  color: #333;
+  border: solid 0.1px;
+  width: 170px;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
+  margin-top: 0.5rem;
+}
+
+.social button, .social-btn {
+  background-color: #ffffff;
+  color: #555;
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 0.5rem;
+  border-radius: 30px;
+  width: 48%; 
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.social-btn img {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+}
