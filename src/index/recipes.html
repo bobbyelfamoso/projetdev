@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matcha Recipes - Pure Matcha</title>
+    <link rel="stylesheet" href="../css/recipes.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script>
+        function handleImageError(img) {
+            img.onerror = null;
+            img.src = 'https://images.unsplash.com/photo-1515822394528-7243c5b8e4e7?q=80&w=800&auto=format&fit=crop';
+        }
+    </script>
+</head>
+
+<body>
+
+    <header class="header-main">
+        <div class="firstnavbar1">
+            <nav class="firstnavbar">
+                <p class="tagline">Experience the Art of Japanese Matcha Ceremony</p>
+                <div class="header-right">
+                    <a href="login.html" class="login-link">Login</a>
+                    <div class="cart-container">
+                        <i class="fas fa-shopping-basket cart-icon"></i>
+                        <span class="cart-badge">0</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="secnavbar1">
+            <nav class="secnavbar">
+                <a href="shopping.html">Discover</a>
+                <a href="#">New In</a>
+                <a href="#">Best Sellers</a>
+                <a href="#">Limited Editions</a>
+                <a href="#">Bundles & Offers</a>
+                <a href="#">Accessories</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="recipes-layout">
+        <div class="recipes-hero">
+            <div class="whitescreen">
+                <div class="firstelem">
+                    <p>The Art of Ritual</p>
+                </div>
+                <div class="secondelem">
+                    <h1>Savor the Ceremony</h1>
+                </div>
+                <div class="thirdtelem">
+                    <p>Discover our curated selection of matcha preparations, from traditional whisks to modern
+                        delights.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="recipes-content">
+            <div class="recipes-grid">
+                <!-- Recipe 1 -->
+                <article class="recipe-card">
+                    <div class="recipe-img">
+                        <img src="https://images.unsplash.com/photo-1515822394528-7243c5b8e4e7?q=80&w=800&auto=format&fit=crop"
+                            onerror="handleImageError(this)" alt="Traditional Matcha">
+                    </div>
+                    <div class="recipe-info">
+                        <span class="recipe-cat">Traditional</span>
+                        <h2>Classic Usucha</h2>
+                        <p class="recipe-desc">The thin tea ceremony preparation. Vibrant, frothy, and pure.</p>
+                        <div class="recipe-meta">
+                            <span><i class="far fa-clock"></i> 3 mins</span>
+                            <span><i class="fas fa-signal"></i> Easy</span>
+                        </div>
+                        <button class="view-recipe-btn">View Ritual</button>
+                    </div>
+                </article>
+
+                <!-- Recipe 2 -->
+                <article class="recipe-card">
+                    <div class="recipe-img">
+                        <img src="https://images.unsplash.com/photo-1536700503339-1e4b06520771?q=80&w=800&auto=format&fit=crop"
+                            onerror="handleImageError(this)" alt="Matcha Latte">
+                    </div>
+                    <div class="recipe-info">
+                        <span class="recipe-cat">Modern</span>
+                        <h2>Creamy Velvety Latte</h2>
+                        <p class="recipe-desc">A soothing blend of ceremonial matcha and your favorite plant-based milk.
+                        </p>
+                        <div class="recipe-meta">
+                            <span><i class="far fa-clock"></i> 5 mins</span>
+                            <span><i class="fas fa-signal"></i> Medium</span>
+                        </div>
+                        <button class="view-recipe-btn">View Ritual</button>
+                    </div>
+                </article>
+
+                <!-- Recipe 3 -->
+                <article class="recipe-card">
+                    <div class="recipe-img">
+                        <img src="https://images.unsplash.com/photo-1523906630133-f6934a1ab4b9?q=80&w=800&auto=format&fit=crop"
+                            onerror="handleImageError(this)" alt="Matcha Smoothie Bowl">
+                    </div>
+                    <div class="recipe-info">
+                        <span class="recipe-cat">Health</span>
+                        <h2>Zen Smoothie Bowl</h2>
+                        <p class="recipe-desc">Power your morning with antioxidants, tropical fruits, and premium
+                            matcha.</p>
+                        <div class="recipe-meta">
+                            <span><i class="far fa-clock"></i> 10 mins</span>
+                            <span><i class="fas fa-signal"></i> Easy</span>
+                        </div>
+                        <button class="view-recipe-btn">View Ritual</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>Shop</h3>
+                <ul>
+                    <li>Our Matcha</li>
+                    <li>Recipes & Videos</li>
+                    <li>Order</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Company</h3>
+                <ul>
+                    <li onclick="location.href='aboutus.html'">About Us</li>
+                    <li>Partners & Cafés</li>
+                    <li onclick="location.href='contact.html'">Contact</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul>
+                    <li onclick="location.href='faq.html'">FAQ</li>
+                    <li onclick="location.href='refund.html'">SAV & Refund</li>
+                    <li><a href="login.html" style="text-decoration: none; color: inherit;">Login</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom-compact">
+            <p>© 2025 Pure Matcha. All Rights Reserved</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
