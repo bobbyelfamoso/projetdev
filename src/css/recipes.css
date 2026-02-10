@@ -15,7 +15,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     color: #2E4F21;
     font-weight: 600;
@@ -106,132 +107,187 @@ h3 {
     color: #2e4f21;
     font-weight: 600;
     font-size: 1rem;
+    transition: color 0.3s;
 }
 
-/* --- Hero Section --- */
-.whitescreen {
-    background-color: #ffffff;
-    padding: 4rem 2rem;
+.secnavbar a:hover {
+    color: #9ccc65;
+}
+
+/* --- Magazine Hero Section --- */
+.recipes-hero {
+    background-color: #2e4f21;
+    /* Dark background for contrast */
+    color: white;
+    padding: 8rem 8rem;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    background-image: linear-gradient(rgba(46, 79, 33, 0.9), rgba(46, 79, 33, 0.8)), url('https://images.unsplash.com/photo-1563822249548-9a72b6353cd1?q=80&w=1200');
+    /* Subtle texture */
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 4rem;
 }
 
-.whitescreen h1 {
-    font-size: 56px;
-    color: #8d6e63;
-    max-width: 900px;
-}
-
-.whitescreen p {
-    color: #8d6e63;
-    font-weight: 500;
-}
-
-/* --- Recipes Content --- */
-.recipes-layout {
-    background-color: #f9fbf8;
-}
-
-.recipes-content {
-    padding: 4rem 8rem 8rem 8rem;
-    max-width: 1440px;
+.hero-content {
+    max-width: 800px;
     margin: 0 auto;
 }
 
-.recipes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 3rem;
-}
-
-.recipe-card {
-    background: white;
-    border-radius: 40px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.recipe-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-}
-
-.recipe-img {
-    height: 300px;
-    overflow: hidden;
-}
-
-.recipe-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s;
-}
-
-.recipe-card:hover .recipe-img img {
-    transform: scale(1.1);
-}
-
-.recipe-info {
-    padding: 2.5rem;
-}
-
-.recipe-cat {
+.hero-subtitle {
     text-transform: uppercase;
-    font-size: 0.75rem;
-    font-weight: 800;
+    letter-spacing: 3px;
+    font-size: 0.9rem;
+    font-weight: 700;
     color: #9ccc65;
-    letter-spacing: 1px;
-    margin-bottom: 0.8rem;
     display: block;
-}
-
-.recipe-info h2 {
-    font-size: 1.6rem;
     margin-bottom: 1rem;
 }
 
-.recipe-desc {
-    color: #8d6e63;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+.recipes-hero h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
 }
 
-.recipe-meta {
+.recipes-hero p {
+    color: #e0e0e0;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* --- Journal Content --- */
+.recipes-layout {
+    background-color: #ffffff;
+}
+
+.journal-section {
+    padding: 0 8rem 8rem 8rem;
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    border-top: 1px solid #f0f0f0;
-    padding-top: 1.5rem;
+    flex-direction: column;
+    gap: 8rem;
 }
 
-.recipe-meta span {
-    font-size: 0.85rem;
-    color: #a0a0a0;
+.journal-entry {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 6rem;
 }
 
-.view-recipe-btn {
+.journal-entry.reverse {
+    flex-direction: row-reverse;
+}
+
+.journal-img-container {
+    flex: 1;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 20px 20px 0px #f0f4ec;
+    /* Distinct decorative shadow */
+}
+
+.journal-img-container img {
     width: 100%;
-    background-color: #2e4f21;
-    color: white;
-    border: none;
-    padding: 1rem;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.journal-img-container:hover img {
+    transform: scale(1.03);
+}
+
+.recipe-overlay {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #2e4f21;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.journal-content {
+    flex: 0.9;
+}
+
+.category-tag {
+    color: #9ccc65;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    display: inline-block;
+    border-bottom: 2px solid #9ccc65;
+    padding-bottom: 0.2rem;
+}
+
+.journal-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #2e4f21;
+}
+
+.excerpt {
+    color: #5d4037;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.ingredients-preview {
+    background-color: #f9fbf8;
+    padding: 2rem;
+    border-radius: 20px;
+    margin-bottom: 2.5rem;
+    border-left: 4px solid #9ccc65;
+}
+
+.ingredients-preview h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.ingredients-preview ul {
+    padding-left: 1.2rem;
+    color: #5d4037;
+}
+
+.ingredients-preview li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.read-more-btn {
+    background: transparent;
+    border: 2px solid #2e4f21;
+    color: #2e4f21;
+    padding: 1rem 2.5rem;
     border-radius: 50px;
     font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
 }
 
-.view-recipe-btn:hover {
-    background-color: #1b3214;
+.read-more-btn:hover {
+    background-color: #2e4f21;
+    color: white;
 }
 
 /* --- Footer --- */
@@ -260,6 +316,11 @@ h3 {
     margin-bottom: 0.8rem;
     opacity: 0.7;
     cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.footer-col ul li:hover {
+    opacity: 1;
 }
 
 .footer-bottom-compact {
@@ -271,11 +332,34 @@ h3 {
 
 @media (max-width: 1024px) {
 
-    .recipes-content,
+    .journal-section,
     .firstnavbar1,
     .secnavbar1,
     .footer {
         padding-left: 2rem;
         padding-right: 2rem;
+    }
+
+    .journal-entry,
+    .journal-entry.reverse {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .journal-img-container {
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .journal-img-container img {
+        height: 350px;
+    }
+
+    .journal-content {
+        width: 100%;
+    }
+
+    .recipes-hero h1 {
+        font-size: 2.5rem;
     }
 }

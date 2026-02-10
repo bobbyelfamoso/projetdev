@@ -46,78 +46,104 @@
 
     <main class="recipes-layout">
         <div class="recipes-hero">
-            <div class="whitescreen">
-                <div class="firstelem">
-                    <p>The Art of Ritual</p>
-                </div>
-                <div class="secondelem">
-                    <h1>Savor the Ceremony</h1>
-                </div>
-                <div class="thirdtelem">
-                    <p>Discover our curated selection of matcha preparations, from traditional whisks to modern
-                        delights.</p>
-                </div>
+            <div class="hero-content">
+                <span class="hero-subtitle">The Matcha Kitchen</span>
+                <h1>Culinary Artistry</h1>
+                <p>Elevate your daily ritual with our curated collection of matcha-infused creations. From traditional
+                    ceremonies to modern fusion delights.</p>
             </div>
         </div>
 
-        <section class="recipes-content">
-            <div class="recipes-grid">
-                <!-- Recipe 1 -->
-                <article class="recipe-card">
-                    <div class="recipe-img">
-                        <img src="https://images.unsplash.com/photo-1515822394528-7243c5b8e4e7?q=80&w=800&auto=format&fit=crop"
-                            onerror="handleImageError(this)" alt="Traditional Matcha">
-                    </div>
-                    <div class="recipe-info">
-                        <span class="recipe-cat">Traditional</span>
-                        <h2>Classic Usucha</h2>
-                        <p class="recipe-desc">The thin tea ceremony preparation. Vibrant, frothy, and pure.</p>
-                        <div class="recipe-meta">
-                            <span><i class="far fa-clock"></i> 3 mins</span>
-                            <span><i class="fas fa-signal"></i> Easy</span>
-                        </div>
-                        <button class="view-recipe-btn">View Ritual</button>
-                    </div>
-                </article>
+        <section class="journal-section">
 
-                <!-- Recipe 2 -->
-                <article class="recipe-card">
-                    <div class="recipe-img">
-                        <img src="https://images.unsplash.com/photo-1536700503339-1e4b06520771?q=80&w=800&auto=format&fit=crop"
-                            onerror="handleImageError(this)" alt="Matcha Latte">
+            <!-- Recipe 1: Left Image -->
+            <article class="journal-entry">
+                <div class="journal-img-container">
+                    <img src="https://images.unsplash.com/photo-1515822394528-7243c5b8e4e7?q=80&w=800&auto=format&fit=crop"
+                        onerror="handleImageError(this)" alt="Traditional Matcha">
+                    <div class="recipe-overlay">
+                        <span class="badge"><i class="far fa-clock"></i> 3 mins</span>
+                        <span class="badge"><i class="fas fa-signal"></i> Easy</span>
                     </div>
-                    <div class="recipe-info">
-                        <span class="recipe-cat">Modern</span>
-                        <h2>Creamy Velvety Latte</h2>
-                        <p class="recipe-desc">A soothing blend of ceremonial matcha and your favorite plant-based milk.
-                        </p>
-                        <div class="recipe-meta">
-                            <span><i class="far fa-clock"></i> 5 mins</span>
-                            <span><i class="fas fa-signal"></i> Medium</span>
-                        </div>
-                        <button class="view-recipe-btn">View Ritual</button>
-                    </div>
-                </article>
+                </div>
+                <div class="journal-content">
+                    <span class="category-tag">Traditional Ritual</span>
+                    <h2>The Classic Usucha</h2>
+                    <p class="excerpt">Experience the meditative calm of the traditional thin tea ceremony. A vibrant,
+                        frothy bowl of emerald green perfection that centers the mind.</p>
 
-                <!-- Recipe 3 -->
-                <article class="recipe-card">
-                    <div class="recipe-img">
-                        <img src="https://images.unsplash.com/photo-1523906630133-f6934a1ab4b9?q=80&w=800&auto=format&fit=crop"
-                            onerror="handleImageError(this)" alt="Matcha Smoothie Bowl">
+                    <div class="ingredients-preview">
+                        <h4>Key Ingredients</h4>
+                        <ul>
+                            <li>2g Ceremonial Grade Matcha</li>
+                            <li>70ml Hot Water (80°C)</li>
+                            <li>Bamboo Whisk (Chasen)</li>
+                        </ul>
                     </div>
-                    <div class="recipe-info">
-                        <span class="recipe-cat">Health</span>
-                        <h2>Zen Smoothie Bowl</h2>
-                        <p class="recipe-desc">Power your morning with antioxidants, tropical fruits, and premium
-                            matcha.</p>
-                        <div class="recipe-meta">
-                            <span><i class="far fa-clock"></i> 10 mins</span>
-                            <span><i class="fas fa-signal"></i> Easy</span>
-                        </div>
-                        <button class="view-recipe-btn">View Ritual</button>
+
+                    <button class="read-more-btn">Read Full Recipe <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <!-- Recipe 2: Right Image -->
+            <article class="journal-entry reverse">
+                <div class="journal-img-container">
+                    <img src="https://images.unsplash.com/photo-1536700503339-1e4b06520771?q=80&w=800&auto=format&fit=crop"
+                        onerror="handleImageError(this)" alt="Matcha Latte">
+                    <div class="recipe-overlay">
+                        <span class="badge"><i class="far fa-clock"></i> 5 mins</span>
+                        <span class="badge"><i class="fas fa-signal"></i> Medium</span>
                     </div>
-                </article>
-            </div>
+                </div>
+                <div class="journal-content">
+                    <span class="category-tag">Modern Twist</span>
+                    <h2>Velvety Matcha Latte</h2>
+                    <p class="excerpt">A comforting hug in a mug. Sweet, creamy, and packed with antioxidants. The
+                        perfect morning companion for a gentle energy boost without the jitters.</p>
+
+                    <div class="ingredients-preview">
+                        <h4>Key Ingredients</h4>
+                        <ul>
+                            <li>1tsp Cooking Grade Matcha</li>
+                            <li>200ml Oat Milk</li>
+                            <li>1tsp Agave Syrup</li>
+                        </ul>
+                    </div>
+
+                    <button class="read-more-btn">Read Full Recipe <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <!-- Recipe 3: Left Image -->
+            <article class="journal-entry">
+                <div class="journal-img-container">
+                    <img src="https://images.unsplash.com/photo-1598155523122-3842354d6c10?q=80&w=800&auto=format&fit=crop"
+                        onerror="handleImageError(this)" alt="Matcha Pancakes">
+                    <div class="recipe-overlay">
+                        <span class="badge"><i class="far fa-clock"></i> 25 mins</span>
+                        <span class="badge"><i class="fas fa-signal"></i> Medium</span>
+                    </div>
+                </div>
+                <div class="journal-content">
+                    <span class="category-tag">Weekend Brunch</span>
+                    <h2>Fluffy Matcha Pancakes</h2>
+                    <p class="excerpt">Green stacks of happiness. These pancakes are light, airy, and carry the distinct
+                        umami flavor of matcha, perfectly balanced with sweet maple syrup.</p>
+
+                    <div class="ingredients-preview">
+                        <h4>Key Ingredients</h4>
+                        <ul>
+                            <li>2 cups Flour</li>
+                            <li>2tbsp Matcha Powder</li>
+                            <li>2 Eggs</li>
+                            <li>Buttermilk</li>
+                        </ul>
+                    </div>
+
+                    <button class="read-more-btn">Read Full Recipe <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </article>
+
         </section>
     </main>
 
