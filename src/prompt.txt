@@ -1,4 +1,0 @@
-Voici le design cible (image).
-Analyse ENSEMBLE le HTML et le CSS ci-dessous.
-Explique pourquoi le rendu ne correspond pas au design
-et donne les corrections CSS précises à appliquer.
