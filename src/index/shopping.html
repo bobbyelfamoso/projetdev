@@ -3,19 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <Title>
-        Discover our products
-    </Title>
+    <Title>Discover our products</Title>
     <link rel="stylesheet" href="../css/shopping.css">
-    <meta>
-
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
     <header class="firstnavbar1">
         <nav class="firstnavbar">
-            <a link rel="Login" href="../index/login.html">Login</a>
-            <a link rel="mycart" href="../index/cart.html">Logo Cart</a> <!-- mettre un logo de panier -->
+            <a href="../index/login.html">Login</a>
+            <a href="../index/cart.html">Logo Cart</a>
         </nav>
     </header>
     <header class="sacnavbar1">
@@ -26,77 +24,52 @@
             <a>Limited Editions</a>
             <a>Bundle & Offers</a>
         </div>
-
     </header>
 
-
-
     <main>
-
         <section class="hero">
             <div class="firstelem">
                 <p>Our selection</p>
             </div>
-
             <div class="secondelem">
                 <h1>Quality Matcha, Crafted with Care</h1>
             </div>
-
             <div class="thirdtelem">
                 <p>Inspired by Japanese Culture </p>
             </div>
         </section>
 
-
         <section class="shoppingpart">
-            <div class="shop">
-                <div class="sidebar">
-                    <aside class="sidebar">
-                        <div class="filter-section">
-                            <h3>Categories</h3>
-                            <ul class="filter-list">
-                                <li class="active">All Products</li>
-                                <li>Ceremonial Grade</li>
-                                <li>Culinary Grade</li>
-                                <li>Tea Sets</li>
-                                <li>Accessories</li>
-                            </ul>
-                        </div>
-                        <div class="filter-section">
-                            <h3>Price Range</h3>
-                            <div class="price-slider-container">
-                                <div class="price-labels">
-                                    <span>0€</span>
-                                    <span id="price-value">100€</span>
-                                </div>
-                                <input type="range" min="0" max="100" value="100" class="price-slider"
-                                    oninput="updatePrice(this.value)">
-                            </div>
-                        </div>
-                    </aside>
-
-                </div>
-            </div>
-        </section>
-
-        <div class="products">
-            <div class="product1">
-                <div class="product-img">
-                    <img src="../img/the-vert-chaud-dans-verre-creme-garni-the-vert-decore-poudre-the-vert_1150-23320.png"
-                        alt="Ceremonial Matcha">
-                </div>
-                <div class="productinfo">
-                    <span class="category">Ceremonial</span>
-                    <h3>Premium Gold Matcha</h3>
-                    <p>Our finest ceremonial grade for the perfect tea ceremony.</p>
-                    <div class="productfooter">
-                        <span class="price">35.00€</span>
-                        <button class="add-btn">Add to Cart</button>
+            <!-- Sidebar à gauche -->
+            <div class="sidebar-container">
+                <aside class="sidebar">
+                    <div class="filter-section">
+                        <h3>Categories</h3>
+                        <ul class="filter-list">
+                            <li class="active">All Products</li>
+                            <li>Ceremonial Grade</li>
+                            <li>Culinary Grade</li>
+                            <li>Tea Sets</li>
+                            <li>Accessories</li>
+                        </ul>
                     </div>
-                </div>
+                    <div class="filter-section">
+                        <h3>Price Range</h3>
+                        <div class="price-slider-container">
+                            <div class="price-labels">
+                                <span>0€</span>
+                                <span id="price-value">100€</span>
+                            </div>
+                            <input type="range" min="0" max="100" value="100" class="price-slider"
+                                oninput="updatePrice(this.value)">
+                        </div>
+                    </div>
+                </aside>
             </div>
 
+            <!-- Grille de produits à droite -->
             <div class="products">
+                <!-- Produit 1 -->
                 <div class="product1">
                     <div class="product-img">
                         <img src="../img/the-vert-chaud-dans-verre-creme-garni-the-vert-decore-poudre-the-vert_1150-23320.png"
@@ -112,58 +85,59 @@
                         </div>
                     </div>
                 </div>
-                <div class="products">
-                    <div class="product1">
-                        <div class="product-img">
-                            <img src="../img/the-vert-chaud-dans-verre-creme-garni-the-vert-decore-poudre-the-vert_1150-23320.png"
-                                alt="Ceremonial Matcha">
-                        </div>
-                        <div class="productinfo">
-                            <span class="category">Ceremonial</span>
-                            <h3>Premium Gold Matcha</h3>
-                            <p>Our finest ceremonial grade for the perfect tea ceremony.</p>
-                            <div class="productfooter">
-                                <span class="price">35.00€</span>
-                                <button class="add-btn">Add to Cart</button>
-                            </div>
+
+                <!-- Produit 2 -->
+                <div class="product1">
+                    <div class="product-img">
+                        <img src="../img/the-vert-chaud-dans-verre-creme-garni-the-vert-decore-poudre-the-vert_1150-23320.png"
+                            alt="Ceremonial Matcha">
+                    </div>
+                    <div class="productinfo">
+                        <span class="category">Ceremonial</span>
+                        <h3>Premium Gold Matcha</h3>
+                        <p>Our finest ceremonial grade for the perfect tea ceremony.</p>
+                        <div class="productfooter">
+                            <span class="price">35.00€</span>
+                            <button class="add-btn">Add to Cart</button>
                         </div>
                     </div>
-                    <div class="products">
-                        <div class="product1">
-                            <div class="product-img">
-                                <img src="../img/the-vert-chaud-dans-verre-creme-garni-the-vert-decore-poudre-the-vert_1150-23320.png"
-                                    alt="Ceremonial Matcha">
-                            </div>
-                            <div class="productinfo">
-                                <span class="category">Ceremonial</span>
-                                <h3>Premium Gold Matcha</h3>
-                                <p>Our finest ceremonial grade for the perfect tea ceremony.</p>
-                                <div class="productfooter">
-                                    <span class="price">35.00€</span>
-                                    <button class="add-btn">Add to Cart</button>
-                                </div>
-                            </div>
+                </div>
+
+                <!-- Produit 3 -->
+                <div class="product1">
+                    <div class="product-img">
+                        <img src="../img/the-vert-chaud-dans-verre-creme-garni-the-vert-decore-poudre-the-vert_1150-23320.png"
+                            alt="Ceremonial Matcha">
+                    </div>
+                    <div class="productinfo">
+                        <span class="category">Ceremonial</span>
+                        <h3>Premium Gold Matcha</h3>
+                        <p>Our finest ceremonial grade for the perfect tea ceremony.</p>
+                        <div class="productfooter">
+                            <span class="price">35.00€</span>
+                            <button class="add-btn">Add to Cart</button>
                         </div>
+                    </div>
+                </div>
 
-
-                        <div class="products">
-                            <div class="product1">
-                                <div class="product-img">
-                                    <img src="../img/the-vert-chaud-dans-verre-creme-garni-the-vert-decore-poudre-the-vert_1150-23320.png"
-                                        alt="Ceremonial Matcha">
-                                </div>
-                                <div class="productinfo">
-                                    <span class="category">Ceremonial</span>
-                                    <h3>Premium Gold Matcha</h3>
-                                    <p>Our finest ceremonial grade for the perfect tea ceremony.</p>
-                                    <div class="productfooter">
-                                        <span class="price">35.00€</span>
-                                        <button class="add-btn">Add to Cart</button>
-                                    </div>
-                                </div>
-                            </div>
-
-
+                <!-- Produit 4 -->
+                <div class="product1">
+                    <div class="product-img">
+                        <img src="../img/the-vert-chaud-dans-verre-creme-garni-the-vert-decore-poudre-the-vert_1150-23320.png"
+                            alt="Ceremonial Matcha">
+                    </div>
+                    <div class="productinfo">
+                        <span class="category">Ceremonial</span>
+                        <h3>Premium Gold Matcha</h3>
+                        <p>Our finest ceremonial grade for the perfect tea ceremony.</p>
+                        <div class="productfooter">
+                            <span class="price">35.00€</span>
+                            <button class="add-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -196,7 +170,6 @@
         <div class="footer-bottom-compact">
             <p>© 2025 Pure Matcha. All Rights Reserved</p>
         </div>
-
     </footer>
 </body>
 

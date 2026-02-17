@@ -128,7 +128,7 @@ h3 {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.sidebar {
+.sidebar-container {
   width: 280px;
   flex-shrink: 0;
 }
@@ -217,7 +217,7 @@ h3 {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.shoppingpart{
+.shoppingpart {
   display: flex;
   padding: 4rem 8rem;
   max-width: 1440px;
@@ -315,5 +315,3 @@ h3 {
 .add-btn:hover {
   background-color: #9ccc65;
 }
-
-
