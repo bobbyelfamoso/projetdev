@@ -42,7 +42,6 @@ img {
   flex-direction: column;
   width: 50%;
   align-items: center;
-  /* Centrage vertical */
   justify-content: center;
   padding-top: 0;
   /* Retirer l'ancien padding excessif */

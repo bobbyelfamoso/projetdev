@@ -156,7 +156,6 @@ h3 {
 
 .youtube-container {
   margin-right: auto;
-  /* DÉCALAGE : Pousse la box vers la GAUCHE */
   margin-left: 0;
 }
 
@@ -234,7 +233,7 @@ h3 {
 .two p {
   font-size: 2rem;
   max-width: 800px;
-  color:#2e4f21;
+  color: #2e4f21;
 
 }
 
@@ -250,7 +249,6 @@ h3 {
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid #f3e5ab;
-  /* Rappel du jaune des tags */
 }
 
 .avatar-container img {
@@ -275,7 +273,6 @@ h3 {
 
 .footer-col h3 {
   color: #ffffff;
-  /* FORCE BLANC POUR LES TITRES FOOTER */
   font-size: 1.2rem;
   margin-bottom: 1.5rem;
   font-weight: 700;
