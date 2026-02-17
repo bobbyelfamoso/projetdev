@@ -24,25 +24,6 @@ body {
   padding: 0;
 }
 
-.firstnavbar1 {
-  background-color: #9ccc65;
-  padding: 1.5rem 8rem;
-}
-
-.firstnavbar {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 3rem;
-}
-
-.firstnavbar a {
-  font-weight: 500;
-  cursor: pointer;
-  color: #2e4f21;
-  text-decoration: none;
-}
-
 img {
   width: 100%;
   height: 100vh;
