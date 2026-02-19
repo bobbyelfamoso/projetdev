@@ -120,12 +120,10 @@ div.all>div {
   width: 100%;
   padding: 1rem 0;
   border-radius: 10px;
-  /* Moins arrondi */
   font-weight: 600;
   font-size: 1.2rem;
   cursor: pointer;
   display: block;
-  /* Important pour corriger l'ancien flex-direction: column */
   margin: 0;
   margin-bottom: 1.5rem;
 }

@@ -25,6 +25,18 @@ h3 {
   padding: 1.5rem 8rem;
 }
 
+.cart-icon {
+  width: 28px;
+  height: auto;
+  display: block;
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
 .firstnavbar {
   display: flex;
   justify-content: flex-end;
@@ -183,6 +195,7 @@ h3 {
 .price-slider {
   width: 100%;
   -webkit-appearance: none;
+  appearance: none;
   height: 6px;
   background: #e0e0e0;
   border-radius: 5px;
@@ -227,6 +240,7 @@ h3 {
 
 
 .products {
+  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2.5rem;
