@@ -170,7 +170,6 @@ h3 {
 .filter-list li:hover,
 .filter-list li.active {
   color: #2e4f21;
-  padding-left: 0.5rem;
 }
 
 .filter-list li.active {
@@ -247,9 +246,7 @@ h3 {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
 }
 
-.product1:hover {
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
+.product1:hover {}
 
 .product-img {
   height: 300px;
