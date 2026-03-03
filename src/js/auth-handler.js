@@ -1,4 +1,4 @@
-// src/js/auth-handler.js
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const loginForm = document.querySelector('.cote-droit');
@@ -25,14 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const data = await response.json();
 
                 if (response.ok) {
-                    // Connexion réussie
                     console.log('Connexion réussie:', data);
-                    // Stocker le token
                     localStorage.setItem('supabase_session', JSON.stringify(data));
                     alert('Connexion réussie !');
                     window.location.href = 'landingpage.html';
                 } else {
-                    // Erreur
                     console.error('Erreur:', data.error_description || data.error || 'Erreur inconnue');
                     alert('Erreur : ' + (data.error_description || data.error || 'Identifiants invalides'));
                 }

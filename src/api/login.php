@@ -1,10 +1,8 @@
 <?php
-// src/api/login.php
 require_once 'config.php';
 
 header('Content-Type: application/json');
 
-// Récupération des données POST (JSON)
 $data = json_decode(file_get_contents('php://input'), true);
 
 if (!isset($data['email']) || !isset($data['password'])) {
@@ -15,7 +13,6 @@ if (!isset($data['email']) || !isset($data['password'])) {
 $email = $data['email'];
 $password = $data['password'];
 
-// URL d'authentification Supabase
 $url = SUPABASE_URL . '/auth/v1/token?grant_type=password';
 
 $ch = curl_init($url);
@@ -36,10 +33,8 @@ $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 curl_close($ch);
 
 if ($httpCode === 200 || $httpCode === 201) {
-    // Succès : On renvoie le token au JS
     echo $response;
 } else {
-    // Erreur
     http_response_code($httpCode);
     echo $response;
 }
