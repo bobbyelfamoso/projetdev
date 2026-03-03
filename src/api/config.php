@@ -1,6 +1,6 @@
 <?php
 
 
-define('SUPABASE_URL', 'https://VOTRE_PROJET.supabase.co');
-define('SUPABASE_KEY', 'VOTRE_CLE_ANON_OU_SERVICE_ROLE');
+define('SUPABASE_URL', 'https://scusdtwjlnncgcndmvmp.supabase.co');
+define('SUPABASE_KEY', 'sb_publishable_k1TkuvN6b4rdK8r4OuzH4Q_iAKCyYWu');
 ?>
