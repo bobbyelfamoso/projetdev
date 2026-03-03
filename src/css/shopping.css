@@ -125,9 +125,7 @@ h3 {
   font-size: 0.95rem;
 }
 
-.footer-col ul li:hover {
-  color: #ffffff;
-}
+.footer-col ul li:hover {}
 
 .footer-bottom-compact {
   padding-top: 2rem;
