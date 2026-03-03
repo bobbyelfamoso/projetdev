@@ -1,120 +1,198 @@
-/* pas fini */
-* {
-    margin: 0rem;
-    box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.4;
-}
-
-h1,
-h2,
-h3 {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    color: #2E4F21;
-    font-weight: 600;
-    line-height: 1.1;
-    font-size: xx-large;
-}
-
-
-.firstnavbar1 {
-    background-color: #9ccc65;
-    padding: 1.5rem 8rem;
-}
-
-.cart-icon {
-    width: 28px;
-    height: auto;
-    display: block;
-}
-
-.cart-link {
+/* Main Styles */
+.hero-recipes {
+    height: 400px;
+    background-image: url('../img/white-chocolate-matcha-cookies-cover-1.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
-    text-decoration: none;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    color: white;
 }
 
-.firstnavbar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 3rem;
+.hero-recipes::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
 }
 
-.firstnavbar a {
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    padding: 0 2rem;
+}
+
+.hero-content .subtitle {
+    font-size: 0.9rem;
     font-weight: 500;
-    cursor: pointer;
-    color: #2e4f21;
-    text-decoration: none;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-.secnavbar1 {
+.hero-content h1 {
+    font-size: 4rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero-content .description {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Recipes Section */
+.recipes-list {
+    padding: 6rem 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
     background-color: #FEFBF6;
-    padding: 1.5rem 8rem;
-    border-bottom: 1px solid #eee;
 }
 
-.secnavbar {
+.recipe-card {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.recipe-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.recipe-img {
+    flex: 1;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.recipe-img img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.recipe-card:hover .recipe-img img {
+    transform: scale(1.05);
+}
+
+.tags {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.tags span {
+    background: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2e4f21;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-info {
+    flex: 1;
+}
+
+.recipe-category {
+    display: block;
+    color: #9ccc65;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-info h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #2e4f21;
+}
+
+.recipe-info p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2.5rem;
+}
+
+.read-more {
+    background-color: white;
+    color: #2e4f21;
+    border: 1px solid #eee;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.read-more:hover {
+    background-color: #2e4f21;
+    color: white;
+    border-color: #2e4f21;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(46, 79, 33, 0.2);
+}
+
+/* Pagination */
+.pagination {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 3rem;
+    gap: 1rem;
+    padding: 4rem 0 8rem 0;
+    background-color: #FEFBF6;
 }
 
-.secnavbar a {
-    font-weight: 600;
-    cursor: pointer;
+.pagination a,
+.pagination span {
+    font-size: 1.5rem;
+    font-weight: 700;
     color: #2e4f21;
     text-decoration: none;
-}
-
-.footer {
-    background-color: #2e4f21;
-    padding: 6rem 8rem 2rem 8rem;
-    color: #ffffff;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer-col h3 {
-    color: #ffffff;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
-}
-
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-col ul li {
-    margin-bottom: 0.8rem;
-    color: rgba(255, 255, 255, 0.8);
-    cursor: pointer;
-    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
     transition: color 0.3s;
 }
 
-.footer-col ul li:hover {
-    color: #ffffff;
+.pagination a.active {
+    text-decoration: underline;
+    text-underline-offset: 8px;
 }
 
-.footer-bottom-compact {
-    padding-top: 2rem;
-    text-align: center;
+.pagination a:hover {
+    color: #9ccc65;
 }
 
-.footer-bottom-compact p {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .recipes-list {
+        padding: 4rem 2rem;
+    }
+
+    .recipe-card {
+        flex-direction: column !important;
+        gap: 3rem;
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
 }
