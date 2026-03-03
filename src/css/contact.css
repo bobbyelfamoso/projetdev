@@ -117,3 +117,132 @@ h3 {
     font-size: 0.85rem;
     color: rgba(255, 255, 255, 0.6);
 }
+
+/* Main Content Styles */
+.contact-main {
+    background-color: #FEFBF6;
+    padding: 4rem 2rem;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #2E4F21;
+    margin-bottom: 4rem;
+}
+
+.contact-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 6rem;
+}
+
+/* Message Card */
+.message-card {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eee;
+}
+
+.message-card h2 {
+    font-size: 1.4rem;
+    color: #2E4F21;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2E4F21;
+}
+
+.form-group input,
+.form-group textarea {
+    border: 1px solid #FFA349;
+    padding: 0.7rem 1rem;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+}
+
+.form-group textarea {
+    height: 120px;
+    resize: none;
+}
+
+.send-btn {
+    background-color: #1A3C23;
+    color: white;
+    border: none;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 1rem;
+}
+
+/* Info Column */
+.info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.info-section h2 {
+    font-size: 1.4rem;
+    color: #2E4F21;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    border-bottom: 2px solid #2E4F21;
+    padding-bottom: 0.2rem;
+}
+
+.info-section p {
+    font-size: 0.95rem;
+    color: #2E4F21;
+    line-height: 1.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+    .contact-section {
+        padding: 0 1rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .page-title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .message-card {
+        padding: 2rem;
+    }
+}
