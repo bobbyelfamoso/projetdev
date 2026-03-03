@@ -263,7 +263,7 @@ h3 {
   color: #ffffff;
 }
 
-.footer- {
+.footer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 4rem;
