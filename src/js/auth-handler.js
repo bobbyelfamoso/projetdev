@@ -1,43 +1,31 @@
-// 1. On récupère l'élément du bouton de connexion par son ID
-const clic = document.getElementById('click');
+const { createClient } = supabase;
 
-// 2. On écoute le clic sur ce bouton
-clic.addEventListener('click', async (event) => {
-    // Empêche le formulaire de recharger la page
-    event.preventDefault();
+const supabaseClient = createClient(
+  "https://scusdtwjlnncgcndmvmp.supabase.co",
+  "sb_publishable_k1TkuvN6b4rdK8r4OuzH4Q_iAKCyYWu"
+);
 
-    // Récupérer les éléments input pour l'email et le mot de passe
-    const email = document.getElementById('username').value;
-    const password = document.getElementById('pass').value;
+async function login() {
+  const { data, error } = await supabaseClient.auth.signInWithPassword({
+    email: document.getElementById("username").value,
+    password: document.getElementById("pass").value,
+  });
 
-    if (!email || !password) {
-        alert("Please fill in all fields.");
-        return;
-    }
+  if (error) {
+    alert(error.message);
+  } else {
+    window.location.href = "shopping.html";
+  }
+}
 
-    try {
-        // Utiliser fetch pour envoyer les données au PHP
-        const response = await fetch('../api/login.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        });
+async function signup() {
+  const { data, error } = await supabaseClient.auth.signUp({
+    email: document.getElementById("username").value,
+    password: document.getElementById("pass").value,
+  });
 
-        const result = await response.json();
+  console.log(data, error);
+}
 
-        if (result.error) {
-            console.error('Error logging in:', result.error);
-            alert('Login failed: ' + result.error);
-        } else {
-            console.log('User logged in successfully:', result);
-            alert('Login successful!');
-            // Rediriger vers la page d'accueil ou shopping
-            window.location.href = 'shopping.html';
-        }
-    } catch (error) {
-        console.error('Fetch error:', error);
-        alert('An error occurred during login.');
-    }
-});
+window.login = login;
+window.signup = signup;
