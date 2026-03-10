@@ -2,15 +2,42 @@
 const clic = document.getElementById('click');
 
 // 2. On écoute le clic sur ce bouton
-clic.addEventListener('click', (event) => {
+clic.addEventListener('click', async (event) => {
     // Empêche le formulaire de recharger la page
     event.preventDefault();
 
-    // TODO: Récupérer les éléments input pour l'email et le mot de passe
+    // Récupérer les éléments input pour l'email et le mot de passe
+    const email = document.getElementById('username').value;
+    const password = document.getElementById('pass').value;
 
-    // TODO: Extraire la valeur (.value) de ces inputs
+    if (!email || !password) {
+        alert("Please fill in all fields.");
+        return;
+    }
 
-    // TODO: Utiliser fetch() pour envoyer les données au fichier PHP (login.php)
+    try {
+        // Utiliser fetch pour envoyer les données au PHP
+        const response = await fetch('../api/login.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        });
 
-    // TODO: Traiter la réponse (si OK -> stocker le token et rediriger)
+        const result = await response.json();
+
+        if (result.error) {
+            console.error('Error logging in:', result.error);
+            alert('Login failed: ' + result.error);
+        } else {
+            console.log('User logged in successfully:', result);
+            alert('Login successful!');
+            // Rediriger vers la page d'accueil ou shopping
+            window.location.href = 'shopping.html';
+        }
+    } catch (error) {
+        console.error('Fetch error:', error);
+        alert('An error occurred during login.');
+    }
 });
