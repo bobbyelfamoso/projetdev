@@ -2,7 +2,7 @@ async function loadProducts() {
     const container = document.getElementById('products-container');
 
     try {
-        const response = await fetch('../api/get_products.php');
+        const response = await fetch('/api/get_products.php');
         const data = await response.json();
 
         if (data.success) {
