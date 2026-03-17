@@ -1,4 +1,5 @@
 <?php include 'includes/header.php'; ?>
+<?php include 'includes/db.php'; ?>
 
 <main>
 
@@ -18,7 +19,6 @@
 
         <div class="sidebar-container">
             <aside class="sidebar">
-
                 <div class="filter-section">
                     <h3>Categories</h3>
                     <ul class="filter-list">
@@ -36,25 +36,59 @@
                             <span>0€</span>
                             <span id="price-value">100€</span>
                         </div>
-                        <input type="range"
-                               min="0"
-                               max="100"
-                               value="100"
-                               class="price-slider"
-                               oninput="updatePrice(this.value)">
+                        <input type="range" min="0" max="100" value="100" class="price-slider"
+                            oninput="updatePrice(this.value)">
                     </div>
                 </div>
-
             </aside>
         </div>
 
-        <div class="products" id="products-container">
+        <div class="products">
+
+            <?php
+            $stmt = $pdo->query("SELECT * FROM products");
+
+            if (!$stmt) {
+                echo "<p>Erreur lors de la récupération des produits.</p>";
+            } else {
+                while ($product = $stmt->fetch()) {
+                    ?>
+
+                    <div class="product1">
+                        <div class="product-img">
+                            <img src="<?= htmlspecialchars($product['image_path']) ?>"
+                                alt="<?= htmlspecialchars($product['name_product']) ?>">
+                        </div>
+
+                        <div class="productinfo">
+                            <span class="category">
+                                <?= htmlspecialchars($product['category_product']) ?>
+                            </span>
+                            <h3>
+                                <?= htmlspecialchars($product['name_product']) ?>
+                            </h3>
+                            <p>
+                                <?= htmlspecialchars($product['short_description']) ?>
+                            </p>
+
+                            <div class="productfooter">
+                                <span class="price">
+                                    <?= htmlspecialchars($product['price_product']) ?>€
+                                </span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <?php
+                }
+            }
+            ?>
+
         </div>
 
     </section>
 
 </main>
-
-<script src="js/shopping.js"></script>
 
 <?php include 'includes/footer.php'; ?>
