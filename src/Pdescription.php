@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pure Matcha - Product Description</title>
     <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/pdescription.css">
+    <link rel="stylesheet" href="css/Pdescription.css">
     <link rel="stylesheet" href="css/shopping.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
