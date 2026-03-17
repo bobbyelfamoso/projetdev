@@ -1,10 +1,40 @@
-<?php include 'includes/header.php'; ?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pure Matcha - Order History</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header class="firstnavbar1">
+        <nav class="firstnavbar">
+            <a href="landingpage.php">Our Selection</a>
+            <a href="landingpage.php">Our Story</a>
+            <a href="shopping.php">Shopping</a>
+            <a href="login.php">Login</a>
+            <a href="cart.php" class="cart-link">
+                <img src="img/Cart-Icon.png" class="cart-icon">
+            </a>
+        </nav>
+    </header>
+    <header class="secnavbar1">
+        <div class="secnavbar">
+            <a>Discover</a>
+            <a>New In</a>
+            <a>Best Sellers</a>
+            <a>Limited Editions</a>
+            <a>Bundle & Offers</a>
+        </div>
+    </header>
 
     <main class="order-main">
         <div class="order-container">
-            <!-- Colonne Gauche: Livraison et Paiement -->
             <div class="order-left-column">
-                <!-- Shipping Details -->
                 <div class="order-card shadow-card">
                     <h2>Shipping Details</h2>
                     <form class="shipping-form">
@@ -47,7 +77,6 @@
                     </form>
                 </div>
 
-                <!-- Payment -->
                 <div class="order-card shadow-card payment-section">
                     <h2>Payment</h2>
                     <div class="payment-options">
@@ -63,7 +92,6 @@
                 </div>
             </div>
 
-            <!-- Colonne Droite: Résumé -->
             <div class="order-right-column">
                 <div class="order-card order-summary-card">
                     <h2>Order Summary</h2>
