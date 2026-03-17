@@ -5,33 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pure Matcha - Product Description</title>
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/pdescription.css">
+    <link rel="stylesheet" href="css/pdescription.css">
+    <link rel="stylesheet" href="css/shopping.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-nav">
-            <p onclick="location.href='landingpage.html'">Our Story</p>
-            <a href="login.html" style="text-decoration: none; color: inherit;">
-                <p>Login</p>
+    <header class="firstnavbar1">
+        <nav class="firstnavbar">
+            <a href="landingpage.html">Our Selection</a>
+            <a href="landingpage.html">Our Story</a>
+            <a href="shopping.html">Shopping</a>
+            <a href="login.html">Login</a>
+            <a href="cart.html" class="cart-link">
+                <img src="img/Cart-Icon.png" class="cart-icon">
             </a>
-            <button class="shop-btn" onclick="location.href='shopping.html'">Shop here</button>
+        </nav>
+    </header>
+    <header class="sacnavbar1">
+        <div class="secnavbar">
+            <a>Discover</a>
+            <a>New In</a>
+            <a>Best Sellers</a>
+            <a>Limited Editions</a>
+            <a>Bundle & Offers</a>
         </div>
     </header>
-
-    <nav class="secondary-nav">
-        <ul>
-            <li>Discover</li>
-            <li>New In</li>
-            <li>Best Sellers</li>
-            <li>Limited Editions</li>
-            <li>Bundle & Offers</li>
-            <li>Accesssories</li>
-        </ul>
-    </nav>
 
     <main class="product-main">
         <div class="back-link">
@@ -44,7 +44,8 @@
 
         <div class="product-hero">
             <div class="product-image-section">
-                <img src="../img/secondsection.png" alt="Pure Matcha Product" class="product-img">
+                <div class="decorative-box"></div>
+                <img src="img/secondsection.png" alt="Pure Matcha Product" class="product-img">
             </div>
 
             <div class="product-info-section">
@@ -101,9 +102,9 @@
             <div class="footer-col">
                 <h3>Shop</h3>
                 <ul>
-                    <li>Our Matcha</li>
+                    <li onclick="location.href='shopping.html'">Our Matcha</li>
                     <li onclick="location.href='recipes.html'">Recipes & Videos</li>
-                    <li>Order</li>
+                    <li onclick="location.href='order.html'">Order</li>
                 </ul>
             </div>
             <div class="footer-col">

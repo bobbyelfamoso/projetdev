@@ -1,4 +1,25 @@
-/* Secondary Navigation */
+/* Header Navigation */
+.sacnavbar1 {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0;
+    border-bottom: 2px solid #F4F4F4;
+}
+
+.secnavbar {
+    display: flex;
+    gap: 3rem;
+}
+
+.secnavbar a {
+    color: #1B3E13;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Secondary Navigation (Legacy, keeping for safety if needed, but not used by sacnavbar1) */
 .secondary-nav {
     padding: 1rem 0;
     border-bottom: 1px solid #eee;
@@ -42,10 +63,11 @@
 }
 
 .product-big-title {
-    font-size: 2rem;
+    font-size: 3.5rem;
     text-align: center;
-    margin-bottom: 2rem;
-    font-weight: 700;
+    margin-bottom: 3rem;
+    font-weight: 800;
+    color: #1B3E13;
 }
 
 /* Product Hero Layout */
@@ -67,13 +89,24 @@
 
 
 .product-img {
-    width: 320px;
-    height: 320px;
+    width: 380px;
+    height: 380px;
     object-fit: cover;
-    border-radius: 40px;
+    border-radius: 60px;
     position: relative;
     z-index: 2;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.decorative-box {
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    background-color: #ffffff;
+    border: 1px solid #F0F0F0;
+    border-radius: 60px;
+    top: 40px;
+    left: 40px;
+    z-index: 1;
 }
 
 /* Info Section */
@@ -84,18 +117,18 @@
 }
 
 .category-label {
-    color: #9CCC65;
-    font-weight: 700;
-    font-size: 0.9rem;
+    color: #A3C586;
+    font-weight: 800;
+    font-size: 1.4rem;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .product-title {
-    font-size: 1.6rem;
-    margin-bottom: 0.8rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
     font-weight: 500;
-    color: #555;
+    color: #4A6E41;
 }
 
 .product-desc {
@@ -120,9 +153,9 @@
 }
 
 .price {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #2E4F21;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #1B3E13;
 }
 
 .actions {
@@ -132,27 +165,42 @@
 }
 
 .wishlist-btn {
-    background-color: #C1E1A6;
+    background-color: #A3C586;
     border: none;
-    width: 44px;
-    height: 44px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.wishlist-btn:hover {
+    transform: scale(1.1);
+}
+
+.wishlist-btn svg path {
+    fill: #1B3E13;
 }
 
 .add-to-cart-btn {
-    background-color: #EB891B;
+    background-color: #F28C28;
     color: white;
     border: none;
-    padding: 0.8rem 2rem;
+    padding: 1rem 3rem;
     border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.9rem;
+    font-weight: 800;
+    font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: 0 8px 15px rgba(235, 137, 27, 0.15);
+    box-shadow: 0 4px 15px rgba(242, 140, 40, 0.2);
+    transition: all 0.2s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e67e17;
+    transform: translateY(-2px);
 }
 
 /* Details Section */
@@ -162,9 +210,12 @@
     gap: 3rem;
 }
 
-.details-section h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.details-section h3,
+.product-details-list h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #1B3E13;
+    font-weight: 800;
 }
 
 .details-section p {
