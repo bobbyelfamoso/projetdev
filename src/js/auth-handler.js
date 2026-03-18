@@ -5,26 +5,66 @@ const supabaseClient = createClient(
   "sb_publishable_k1TkuvN6b4rdK8r4OuzH4Q_iAKCyYWu"
 );
 
-async function login() {
-  const { data, error } = await supabaseClient.auth.signInWithPassword({
-    email: document.getElementById("username").value,
-    password: document.getElementById("pass").value,
-  });
+function showMessage(message, type) {
+    const container = document.getElementById("message-container");
+    container.innerHTML = '<p class="' + type + '">' + message + '</p>';
+}
 
-  if (error) {
-    alert(error.message);
-  } else {
-    window.location.href = "shopping.php";
-  }
+function clearMessage() {
+    document.getElementById("message-container").innerHTML = '';
+}
+
+async function login() {
+    clearMessage();
+    
+    const email = document.getElementById("username").value;
+    const password = document.getElementById("pass").value;
+
+    if (!email || !password) {
+        showMessage("Please enter both email and password.", "error");
+        return;
+    }
+
+    const { data, error } = await supabaseClient.auth.signInWithPassword({
+        email: email,
+        password: password,
+    });
+
+    if (error) {
+        showMessage(error.message, "error");
+    } else {
+        window.location.href = "shopping.php";
+    }
 }
 
 async function signup() {
-  const { data, error } = await supabaseClient.auth.signUp({
-    email: document.getElementById("username").value,
-    password: document.getElementById("pass").value,
-  });
+    clearMessage();
+    
+    const email = document.getElementById("username").value;
+    const password = document.getElementById("pass").value;
 
-  console.log(data, error);
+    if (!email || !password) {
+        showMessage("Please enter both email and password.", "error");
+        return;
+    }
+
+    if (password.length < 8) {
+        showMessage("Password must be at least 8 characters.", "error");
+        return;
+    }
+
+    const { data, error } = await supabaseClient.auth.signUp({
+        email: email,
+        password: password,
+    });
+
+    if (error) {
+        showMessage(error.message, "error");
+    } else if (data.user && !data.session) {
+        showMessage("Check your email to confirm your account.", "success");
+    } else {
+        showMessage("Account created! You are now logged in.", "success");
+    }
 }
 
 window.login = login;

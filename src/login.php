@@ -21,6 +21,8 @@
         </div>
 
         <div class="cote-droit">
+            <div id="message-container"></div>
+
             <div class="text">
                 <h1>Welcome Back ! <strong> Log in</strong></h1>
             </div>
