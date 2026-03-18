@@ -56,8 +56,10 @@
 
                     <div class="product1">
                         <div class="product-img">
-                            <img src="<?= htmlspecialchars($product['image_path']) ?>"
-                                alt="<?= htmlspecialchars($product['name_product']) ?>">
+                            <a href="Pdescription.php?id=<?= htmlspecialchars($product['id_product']) ?>">
+                                <img src="<?= htmlspecialchars($product['image_path']) ?>"
+                                    alt="<?= htmlspecialchars($product['name_product']) ?>">
+                            </a>
                         </div>
 
                         <div class="productinfo">

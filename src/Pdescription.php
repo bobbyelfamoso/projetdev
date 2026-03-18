@@ -1,10 +1,30 @@
+<?php 
+include 'includes/db.php';
+
+$id = $_GET['id'] ?? null;
+
+if (!$id) {
+    header('Location: shopping.php');
+    exit;
+}
+
+$stmt = $pdo->prepare("SELECT * FROM products WHERE id_product = ?");
+$stmt->execute([$id]);
+$product = $stmt->fetch();
+
+if (!$product) {
+    header('Location: shopping.php');
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pure Matcha - Product Description</title>
+    <title>Pure Matcha - <?= htmlspecialchars($product['name_product']) ?></title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/Pdescription.css">
     <link rel="stylesheet" href="css/shopping.css">
@@ -41,22 +61,20 @@
             </a>
         </div>
 
-        <h1 class="product-big-title">Ceremonial Grade Matcha</h1>
+        <h1 class="product-big-title"><?= htmlspecialchars($product['category_product']) ?></h1>
 
         <div class="product-hero">
             <div class="product-image-section">
                 <div class="decorative-box"></div>
-                <img src="img/secondsection.png" alt="Pure Matcha Product" class="product-img">
+                <img src="<?= htmlspecialchars($product['image_path']) ?>" alt="<?= htmlspecialchars($product['name_product']) ?>" class="product-img">
             </div>
 
             <div class="product-info-section">
                 <div class="info-card">
-                    <span class="category-label">Ceremonial</span>
-                    <h2 class="product-title">Uji Signature Matcha</h2>
+                    <span class="category-label"><?= htmlspecialchars($product['category_product']) ?></span>
+                    <h2 class="product-title"><?= htmlspecialchars($product['name_product']) ?></h2>
                     <p class="product-desc">
-                        Experience the peak of Japanese tea craftsmanship with our Uji Signature Matcha.
-                        Hand-picked during the first spring harvest, this ceremonial grade powder offers
-                        a vibrant emerald color and a surprisingly sweet, creamy finish with no bitterness.
+                        <?= htmlspecialchars($product['long_description']) ?>
                     </p>
                 </div>
 
@@ -66,7 +84,7 @@
                 </div>
 
                 <div class="purchase-section">
-                    <span class="price">10.29$</span>
+                    <span class="price"><?= htmlspecialchars($product['price_product']) ?>$</span>
                     <div class="actions">
                         <button class="wishlist-btn">
                             <svg viewBox="0 0 24 24" width="24" height="24">
@@ -83,8 +101,7 @@
         <section class="details-section">
             <div class="usage-guide">
                 <h3>How to use</h3>
-                <p>Add 1-2g of matcha to hot (not boiling) water. Whisk until smooth and frothy. Enjoy as a tea or
-                    latte.</p>
+                <p><?= htmlspecialchars($product['short_description']) ?></p>
             </div>
 
             <div class="product-details-list">
