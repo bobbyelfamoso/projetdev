@@ -27,20 +27,22 @@
                 <h1>Welcome Back ! <strong> Log in</strong></h1>
             </div>
 
-            <div class="input">
-                <label for="username">Email</label>
-                <input type="text" id="username" name="username" />
+            <form onsubmit="return false;">
+                <div class="input">
+                    <label for="username">Email</label>
+                    <input type="text" id="username" name="username" />
 
 
-                <label for="pass">Password</label>
-                <input type="password" id="pass" name="password" minlength="8" required />
-            </div>
+                    <label for="pass">Password</label>
+                    <input type="password" id="pass" name="password" minlength="8" required onkeydown="if(event.key === 'Enter'){ login(); }" />
+                </div>
 
-            <div class="buttons">
-                <button class="log" onclick="login()">Log in</button>
-                <button class="log" onclick="signup()">Create account</button>
+                <div class="buttons">
+                    <button type="button" class="log" onclick="login()">Log in</button>
+                    <button type="button" class="log" onclick="signup()">Create account</button>
 
-            </div>
+                </div>
+            </form>
 
         </div>
 
