@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pure Matcha</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="all">
+        <div class="cote-gauche">
+            <div>
+                <img src="img/KJ-Matcha-Latte-3.jpg">
+            </div>
+
+        </div>
+
+        <div class="cote-droit">
+            <div class="text">
+                <h1>Welcome Back ! <strong> Log in</strong></h1>
+            </div>
+
+            <div class="input">
+                <label for="username">Email</label>
+                <input type="text" id="username" name="username" />
+
+
+                <label for="pass">Password</label>
+                <input type="password" id="pass" name="password" minlength="8" required />
+            </div>
+
+            <div class="buttons">
+                <button class="log" onclick="login()">Log in</button>
+                <button class="log" onclick="signup()">Create account</button>
+
+            </div>
+
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/auth-handler.js"></script>
+</body>
+
+</html>

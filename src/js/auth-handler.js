@@ -14,7 +14,7 @@ async function login() {
   if (error) {
     alert(error.message);
   } else {
-    window.location.href = "shopping.html";
+    window.location.href = "shopping.php";
   }
 }
 
