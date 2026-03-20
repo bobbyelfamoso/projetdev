@@ -1,11 +1,10 @@
 <?php
-header('Content-Type: application/json');
 include __DIR__ . '/../../../includes/db.php';
 
 $product_id = $_POST['product_id'] ?? null;
 
 if (!$product_id) {
-    echo json_encode(['success' => false, 'error' => 'No product']);
+    header('Location: ../../shopping.php');
     exit;
 }
 

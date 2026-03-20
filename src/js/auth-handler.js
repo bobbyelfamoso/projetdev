@@ -33,6 +33,13 @@ async function login() {
     if (error) {
         showMessage(error.message, "error");
     } else {
+        // Stocker l'user_id dans la session PHP
+        const userId = data.user.id;
+        await fetch('api/session.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'user_id=' + encodeURIComponent(userId)
+        });
         window.location.href = "shopping.php";
     }
 }
