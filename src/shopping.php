@@ -77,7 +77,10 @@
                                 <span class="price">
                                     <?= htmlspecialchars($product['price_product']) ?>€
                                 </span>
-                                <button class="add-btn">Add to Cart</button>
+                                <form method="POST" action="api/cart/create.php" style="display:inline;">
+                                    <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['id_product']) ?>">
+                                    <button type="submit">Add to Cart</button>
+                                </form>
                             </div>
                         </div>
                     </div>
