@@ -1,6 +1,6 @@
 <?php 
 
-include __DIR__ . '/../../../includes/db.php';
+include __DIR__ . '/../../includes/db.php';
 session_start();
 $user_id = $_SESSION['user_id'] ?? null;
 $product_id = $_POST['product_id'] ?? null;
