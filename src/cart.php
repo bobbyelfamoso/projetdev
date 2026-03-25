@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- TODO: ajout code pour localStorage (non-connecté) -->
     <title>Pure Matcha - Your Cart</title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/cart.css">
