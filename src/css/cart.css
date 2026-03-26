@@ -277,7 +277,34 @@ h3 {
     cursor: pointer;
 }
 
-/* Mobile Responsive */
+.remove-item-btn {
+    background: none;
+    border: 1px solid #D4A373;
+    color: #D4A373;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.remove-item-btn:hover {
+    background-color: #D4A373;
+    color: white;
+}
+
+.back-link {
+    margin-bottom: 1.5rem;
+}
+.back-link a {
+    text-decoration: none;
+    color: #2E4F21;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
 @media (max-width: 768px) {
     .cart-card {
         padding: 2rem 1.5rem;
