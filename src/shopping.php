@@ -1,8 +1,11 @@
 <?php
+include 'includes/init.php';
 $page_title = 'Shopping - Pure Matcha';
 $page_css = 'shopping';
-include 'includes/header.php';
-include __DIR__ . '/includes/db.php'; ?>
+include 'includes/db.php';
+$user_id = $_SESSION['user_id'] ?? null;
+?>
+<?php include 'includes/header.php'; ?>
 
 <main>
 

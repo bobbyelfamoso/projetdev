@@ -1,7 +1,11 @@
 <?php
+include 'includes/init.php';
 $page_title = 'Order - Pure Matcha';
 $page_css = 'order';
-include 'includes/header.php'; ?>
+include 'includes/db.php';
+$user_id = $_SESSION['user_id'] ?? null;
+?>
+<?php include 'includes/header.php'; ?>
 
     <main class="order-main">
         <div class="order-container">

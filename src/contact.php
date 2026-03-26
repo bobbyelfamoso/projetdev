@@ -1,7 +1,11 @@
 <?php
+include 'includes/init.php';
 $page_title = 'Contact Us - Pure Matcha';
 $page_css = 'contact';
-include 'includes/header.php'; ?>
+include 'includes/db.php';
+$user_id = $_SESSION['user_id'] ?? null;
+?>
+<?php include 'includes/header.php'; ?>
 
     <main class="contact-main">
         <h1 class="page-title">Contact Us</h1>

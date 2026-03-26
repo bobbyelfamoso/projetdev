@@ -1,5 +1,7 @@
 <?php 
+include 'includes/init.php';
 include 'includes/db.php';
+$user_id = $_SESSION['user_id'] ?? null;
 
 $id = $_GET['id'] ?? null;
 
@@ -19,8 +21,8 @@ if (!$product) {
 
 $page_title = htmlspecialchars($product['name_product']) . ' - Pure Matcha';
 $page_css = 'Pdescription';
-include 'includes/header.php';
 ?>
+<?php include 'includes/header.php'; ?>
 
     <main class="product-main">
         <div class="back-link">

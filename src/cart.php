@@ -1,7 +1,9 @@
 <?php
+include 'includes/init.php';
 $page_title = 'Your Cart - Pure Matcha';
 $page_css = 'cart';
 include 'includes/db.php';
+$user_id = $_SESSION['user_id'] ?? null;
 $cart_items = [];
 if ($user_id) {
     $stmt = $pdo->prepare("

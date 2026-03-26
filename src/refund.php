@@ -1,8 +1,11 @@
 <?php
+include 'includes/init.php';
 $page_title = 'Refund Policy - Pure Matcha';
 $page_css = 'refund';
-include 'includes/header.php';
+include 'includes/db.php';
+$user_id = $_SESSION['user_id'] ?? null;
 ?>
+<?php include 'includes/header.php'; ?>
 
     <main>
         <section class="refund-hero">
