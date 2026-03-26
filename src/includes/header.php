@@ -1,3 +1,7 @@
+<?php
+session_start();
+$user_id = $_SESSION['user_id'] ?? null;
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +22,11 @@
         <a href="landingpage.php">Our Selection</a>
         <a href="landingpage.php">Our Story</a>
         <a href="shopping.php">Shopping</a>
-        <a href="login.php">Login</a>
+        <?php if ($user_id): ?>
+            <a href="api/session/logout.php">Logout</a>
+        <?php else: ?>
+            <a href="login.php">Login</a>
+        <?php endif; ?>
         <a href="cart.php" class="cart-link">
             <img src="img/Cart-Icon.png" class="cart-icon">
         </a>
