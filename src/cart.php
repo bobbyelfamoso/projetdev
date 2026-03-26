@@ -43,10 +43,10 @@ if ($user_id) {
                         <div class="item-details">
                             <h2><?= htmlspecialchars($item['name_product']) ?></h2>
                             <span class="item-id">ID: <?= $item['id_product'] ?></span>
-                            <span class="item-price-label">Price: <?= number_format($item['price_product'], 2) ?>£</span>
+                            <span class="item-price-label">Price: <?= number_format($item['price_product'], 2) ?>€</span>
                         </div>
                         <div class="item-actions">
-                            <span class="item-total"><?= number_format($item_total, 2) ?>£</span>
+                            <span class="item-total"><?= number_format($item_total, 2) ?>€</span>
                             <div class="quantity-selector">
                                 <form method="POST" action="api/cart/update.php" style="display:inline;">
                                     <input type="hidden" name="id_cart_item" value="<?= $item['id_cart_item'] ?>">
@@ -75,15 +75,15 @@ if ($user_id) {
                 <h3>Summary:</h3>
                 <div class="summary-row">
                     <span>Subtotal</span>
-                    <span><?= number_format($subtotal, 2) ?>£</span>
+                    <span><?= number_format($subtotal, 2) ?>€</span>
                 </div>
                 <div class="summary-row">
                     <span>Shipping</span>
-                    <span>2.50£</span>
+                    <span>2.50€</span>
                 </div>
                 <div class="summary-total">
                     <span>Total</span>
-                    <span><?= number_format($subtotal + 2.50, 2) ?>£</span>
+                    <span><?= number_format($subtotal + 2.50, 2) ?>€</span>
                 </div>
             </div>
 
