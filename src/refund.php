@@ -1,36 +1,9 @@
-<!DOCTYPE html>
-<html>
+<?php
+$page_title = 'Refund Policy - Pure Matcha';
+$page_css = 'refund';
+include 'includes/header.php';
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Pure Matcha - Refund Policy</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/refund.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <header class="firstnavbar1">
-        <nav class="firstnavbar">
-            <a href="landingpage.php">Our Selection</a>
-            <a href="landingpage.php">Our Story</a>
-            <a href="shopping.php">Shopping</a>
-            <a href="login.php">Login</a>
-            <a href="cart.php" class="cart-link">
-                <img src="img/Cart-Icon.png" class="cart-icon">
-            </a>
-        </nav>
-    </header>
-    <header class="secnavbar1">
-        <div class="secnavbar">
-            <a>Discover</a>
-            <a>New In</a>
-            <a>Best Sellers</a>
-            <a>Limited Editions</a>
-            <a>Bundle & Offers</a>
-        </div>
-    </header>
     <main>
         <section class="refund-hero">
             <p class="hero-subtitle">Customer Support</p>

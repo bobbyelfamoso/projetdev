@@ -1,5 +1,8 @@
-<?php include 'includes/header.php'; ?>
-<?php include __DIR__ . '/includes/db.php'; ?>
+<?php
+$page_title = 'Shopping - Pure Matcha';
+$page_css = 'shopping';
+include 'includes/header.php';
+include __DIR__ . '/includes/db.php'; ?>
 
 <main>
 
@@ -78,7 +81,8 @@
                                     <?= htmlspecialchars($product['price_product']) ?>€
                                 </span>
                                 <form method="POST" action="api/cart/create.php" style="display:inline;">
-                                    <input type="hidden" name="product_id" value="<?= htmlspecialchars($product['id_product']) ?>">
+                                    <input type="hidden" name="product_id"
+                                        value="<?= htmlspecialchars($product['id_product']) ?>">
                                     <button type="submit" class="add-btn">Add to Cart</button>
                                 </form>
                             </div>

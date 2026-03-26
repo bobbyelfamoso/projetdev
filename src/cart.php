@@ -1,87 +1,81 @@
-<!DOCTYPE html>
-<html>
+<?php
+$page_title = 'Your Cart - Pure Matcha';
+$page_css = 'cart';
+include 'includes/db.php';
+session_start();
+$user_id = $_SESSION['user_id'] ?? null;
+$cart_items = [];
+if ($user_id) {
+    $stmt = $pdo->prepare("
+        SELECT cart_items.*, products.name_product, products.price_product, products.image_path 
+        FROM cart_items 
+        JOIN products ON cart_items.id_product = products.id_product 
+        WHERE cart_items.id_user = ?
+    ");
+    $stmt->execute([$user_id]);
+    $cart_items = $stmt->fetchAll();
+}
+?>
 
-<head>
-    <meta charset="UTF-8">
-    <!-- TODO: ajout code pour localStorage (non-connecté) -->
-    <title>Pure Matcha - Your Cart</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/cart.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <header class="firstnavbar1">
-        <nav class="firstnavbar">
-            <a href="landingpage.php">Our Selection</a>
-            <a href="landingpage.php">Our Story</a>
-            <a href="shopping.php">Shopping</a>
-            <a href="login.php">Login</a>
-            <a href="cart.php" class="cart-link">
-                <img src="img/Cart-Icon.png" class="cart-icon">
-            </a>
-        </nav>
-    </header>
-    <header class="secnavbar1">
-        <div class="secnavbar">
-            <a>Discover</a>
-            <a>New In</a>
-            <a>Best Sellers</a>
-            <a>Limited Editions</a>
-            <a>Bundle & Offers</a>
-        </div>
-    </header>
+<?php include 'includes/header.php'; ?>
 
     <main class="cart-main">
         <div class="cart-card">
             <h1 class="cart-title">Your Cart</h1>
 
             <div class="cart-items">
-                <div class="cart-item">
-                    <div class="item-image">
-                        <img src="img/Matcharecipe.png" alt="Product">
+                <?php if (empty($cart_items)): ?>
+                    <div class="empty-cart-message">
+                        <p>Your cart is empty</p>
+                        <a href="shopping.php">Continue Shopping</a>
                     </div>
-                    <div class="item-details">
-                        <h2>Product</h2>
-                        <span class="item-id">ID: XXXXX123</span>
-                        <span class="item-price-label">Price: 50.00£</span>
-                    </div>
-                    <div class="item-actions">
-                        <span class="item-total">50.00£</span>
-                        <div class="quantity-selector">
-                            <button type="button" class="qty-btn">+</button>
-                            <span class="qty-number">1</span>
-                            <button type="button" class="qty-btn">-</button>
+                <?php else: ?>
+                    <?php 
+                    $subtotal = 0;
+                    foreach ($cart_items as $item): 
+                        $item_total = $item['price_product'] * $item['qty'];
+                        $subtotal += $item_total;
+                    ?>
+                    <div class="cart-item">
+                        <div class="item-image">
+                            <img src="<?= htmlspecialchars($item['image_path']) ?>" alt="<?= htmlspecialchars($item['name_product']) ?>">
+                        </div>
+                        <div class="item-details">
+                            <h2><?= htmlspecialchars($item['name_product']) ?></h2>
+                            <span class="item-id">ID: <?= $item['id_product'] ?></span>
+                            <span class="item-price-label">Price: <?= number_format($item['price_product'], 2) ?>£</span>
+                        </div>
+                        <div class="item-actions">
+                            <span class="item-total"><?= number_format($item_total, 2) ?>£</span>
+                            <div class="quantity-selector">
+                                <form method="POST" action="api/cart/update.php" style="display:inline;">
+                                    <input type="hidden" name="id_cart_item" value="<?= $item['id_cart_item'] ?>">
+                                    <input type="hidden" name="qty" value="<?= max(1, $item['qty'] - 1) ?>">
+                                    <button type="submit" class="qty-btn">-</button>
+                                </form>
+                                <span class="qty-number"><?= $item['qty'] ?></span>
+                                <form method="POST" action="api/cart/update.php" style="display:inline;">
+                                    <input type="hidden" name="id_cart_item" value="<?= $item['id_cart_item'] ?>">
+                                    <input type="hidden" name="qty" value="<?= $item['qty'] + 1 ?>">
+                                    <button type="submit" class="qty-btn">+</button>
+                                </form>
+                            </div>
+                            <form method="POST" action="api/cart/delete.php">
+                                <input type="hidden" name="id_cart_item" value="<?= $item['id_cart_item'] ?>">
+                                <button type="submit" class="remove-item-btn">Remove</button>
+                            </form>
                         </div>
                     </div>
-                </div>
-
-                <div class="cart-item">
-                    <div class="item-image">
-                        <img src="img/Matcharecipe2.png" alt="Product">
-                    </div>
-                    <div class="item-details">
-                        <h2>Product</h2>
-                        <span class="item-id">ID: XXXXX123</span>
-                        <span class="item-price-label">Price: 50.00£</span>
-                    </div>
-                    <div class="item-actions">
-                        <span class="item-total">50.00£</span>
-                        <div class="quantity-selector">
-                            <button type="button" class="qty-btn">+</button>
-                            <span class="qty-number">1</span>
-                            <button type="button" class="qty-btn">-</button>
-                        </div>
-                    </div>
-                </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
 
+            <?php if (!empty($cart_items)): ?>
             <div class="cart-summary">
                 <h3>Summary:</h3>
                 <div class="summary-row">
                     <span>Subtotal</span>
-                    <span>100.00£</span>
+                    <span><?= number_format($subtotal, 2) ?>£</span>
                 </div>
                 <div class="summary-row">
                     <span>Shipping</span>
@@ -89,14 +83,17 @@
                 </div>
                 <div class="summary-total">
                     <span>Total</span>
-                    <span>102.50£</span>
+                    <span><?= number_format($subtotal + 2.50, 2) ?>£</span>
                 </div>
             </div>
 
             <div class="cart-footer">
-                <button class="checkout-btn">Check Out</button>
+                <form method="POST" action="order.php">
+                    <button type="submit" class="checkout-btn">Check Out</button>
+                </form>
             </div>
+            <?php endif; ?>
         </div>
     </main>
 
-<?php include 'includes/footer.php'; ?>
+    <?php include 'includes/footer.php'; ?>
