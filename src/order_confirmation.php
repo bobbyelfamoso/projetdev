@@ -38,7 +38,7 @@ $order_items = $stmt->fetchAll();
 
     <main class="cart-main">
         <div class="cart-card">
-            <h1 class="cart-title">Order Confirmed</h1>
+            <h1 class="cart-title">Order Confirmed <span class="order-number">Order #<?= $id_order ?></span></h1>
 
             <div class="cart-items">
                 <?php if (empty($order_items)): ?>
@@ -52,10 +52,8 @@ $order_items = $stmt->fetchAll();
                     </div>
                 <?php else: ?>
                     <?php 
-                    $subtotal = 0;
                     foreach ($order_items as $item): 
                         $item_total = $item['price_product'] * $item['qty'];
-                        $subtotal += $item_total;
                     ?>
                     <div class="cart-item">
                         <div class="item-image">
@@ -67,10 +65,8 @@ $order_items = $stmt->fetchAll();
                             <span class="item-price-label">Price: <?= number_format($item['price_product'], 2) ?>€</span>
                         </div>
                         <div class="item-actions">
-                            <span class="item-total"><?= number_format($item_total, 2) ?>€</span>                                
-                                <span class="qty-number"><?= $item['qty'] ?></span>
-                                
-                            </div>
+                            <span class="item-total"><?= number_format($item_total, 2) ?>€</span>
+                            <span class="qty-number"><?= $item['qty'] ?></span>
                         </div>
                     </div>
                     <?php endforeach; ?>
@@ -78,15 +74,9 @@ $order_items = $stmt->fetchAll();
             </div>
 
             <?php if (!empty($order_items)): ?>
-            <div class="cart-summary">
-                <h3>Order #<?= $id_order ?></h3>
-                <div class="summary-total">
-                    <span>Total</span>
-                    <span><?= number_format($order['total_order'], 2) ?>€</span>
-                </div>
-            </div>
-
-            <div class="cart-footer">
+            <div class="order-total">
+                <span>Total</span>
+                <span><?= number_format($order['total_order'], 2) ?>€</span>
             </div>
             <?php endif; ?>
         </div>
