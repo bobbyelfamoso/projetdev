@@ -107,8 +107,14 @@ $page_css = 'faq';
         question.addEventListener('click', function() {
             var item = question.closest('.faq-item');
             item.classList.toggle('expanded');
-        });
+            var icon = question.querySelector('.icon plus');
+            if (item.classList.contains('expanded')) {
+                icon.textContent = '-';
+            } else {
+                icon.textContent = '+';
+            }
        });
+});
     </script>
 
 <?php include 'includes/footer.php'; ?>
