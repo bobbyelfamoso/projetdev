@@ -218,7 +218,6 @@ h3 {
     color: #888;
 }
 
-/* Order Summary */
 .order-summary-card {
     position: sticky;
     top: 2rem;
@@ -291,7 +290,16 @@ h3 {
     cursor: pointer;
 }
 
-/* Mobile Responsive */
+.payment-opt.error {
+    outline: 2px solid #e74c3c;
+}
+.payment-error {
+    color: #e74c3c;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
 @media (max-width: 1024px) {
     .order-container {
         grid-template-columns: 1fr;

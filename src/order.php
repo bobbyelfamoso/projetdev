@@ -4,6 +4,7 @@ $page_title = 'Order - Pure Matcha';
 $page_css = 'order';
 include 'includes/db.php';
 $user_id = $_SESSION['user_id'] ?? null;
+$error = $_GET['error'] ?? null;
 
 if (!$user_id) {
     header('Location: login.php');
@@ -81,15 +82,21 @@ $total = $subtotal + $shipping + $tax;
                 <div class="order-card shadow-card payment-section">
                     <h2>Payment</h2>
                     <div class="payment-options">
-                        <button class="payment-opt">
-                            <img src="img/Paypal_Logo2014.png" alt="PayPal">
+                        <input type="radio" name="payment_method" value="paypal" id="paypal" hidden>
+                        <label for="paypal" class="payment-opt <?= $error ? 'error' : '' ?>">
+                            <img src="img/PayPal_Logo2014.png" alt="PayPal">
                             <span>PayPal</span>
-                        </button>
-                        <button class="payment-opt">
+                        </label>
+
+                        <input type="radio" name="payment_method" value="card" id="card" hidden>
+                        <label for="card" class="payment-opt <?= $error ? 'error' : '' ?>">
                             <img src="img/Logo_CB-1-1024x503.png" alt="Credit Card">
                             <span>Credit Card</span>
-                        </button>
+                        </label>
                     </div>
+                    <?php if ($error === 'no_payment'): ?>
+                        <p class="payment-error">Please select a payment method</p>
+                    <?php endif; ?>
                 </div>
             </div>
 
@@ -137,6 +144,6 @@ $total = $subtotal + $shipping + $tax;
             </div>
         </div>
     </form>
-    </main>
+</main>
 
 <?php include 'includes/footer.php'; ?>
