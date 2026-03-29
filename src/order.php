@@ -4,6 +4,33 @@ $page_title = 'Order - Pure Matcha';
 $page_css = 'order';
 include 'includes/db.php';
 $user_id = $_SESSION['user_id'] ?? null;
+
+if (!$user_id) {
+    header('Location: login.php');
+    exit;
+}
+
+$stmt = $pdo->prepare("
+    SELECT cart_items.*, products.name_product, products.price_product, products.category_product
+    FROM cart_items 
+    JOIN products ON cart_items.id_product = products.id_product 
+    WHERE cart_items.id_user = ?
+");
+$stmt->execute([$user_id]);
+$cart_items = $stmt->fetchAll();
+
+if (empty($cart_items)) {
+    header('Location: cart.php');
+    exit;
+}
+
+$subtotal = 0;
+foreach ($cart_items as $item) {
+    $subtotal += $item['price_product'] * $item['qty'];
+}
+$shipping = 2.50;
+$tax = 2.00;
+$total = $subtotal + $shipping + $tax;
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -12,55 +39,54 @@ $user_id = $_SESSION['user_id'] ?? null;
             <div class="order-left-column">
                 <div class="order-card shadow-card">
                     <h2>Shipping Details</h2>
-                    <form class="shipping-form">
+                    <form class="shipping-form" method="POST" action="api/order/create.php">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="first-name">First Name</label>
-                                <input type="text" id="first-name" placeholder="">
+                                <input type="text" id="first-name" name="first_name" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="last-name">Last Name</label>
-                                <input type="text" id="last-name" placeholder="">
+                                <input type="text" id="last-name" name="last_name" placeholder="">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="">
+                            <input type="email" id="email" name="email" placeholder="">
                         </div>
 
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <input type="text" id="address" placeholder="">
+                            <input type="text" id="address" name="address" placeholder="">
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="city">City</label>
-                                <input type="text" id="city" placeholder="">
+                                <input type="text" id="city" name="city" placeholder="">
                             </div>
                             <div class="form-group">
                                 <label for="zipcode">Zip Code</label>
-                                <input type="text" id="zipcode" placeholder="">
+                                <input type="text" id="zipcode" name="zipcode" placeholder="">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="country">Country</label>
-                            <input type="text" id="country" placeholder="">
+                            <input type="text" id="country" name="country" placeholder="">
                         </div>
-                    </form>
                 </div>
 
                 <div class="order-card shadow-card payment-section">
                     <h2>Payment</h2>
                     <div class="payment-options">
                         <button class="payment-opt">
-                            <img src="img/Paypal-Icon.png" alt="PayPal">
+                            <img src="img/Paypal_Logo2014.png" alt="PayPal">
                             <span>PayPal</span>
                         </button>
                         <button class="payment-opt">
-                            <img src="img/Card-Icon.png" alt="Credit Card">
+                            <img src="img/Logo_CB-1-1024x503.png" alt="Credit Card">
                             <span>Credit Card</span>
                         </button>
                     </div>
@@ -71,38 +97,46 @@ $user_id = $_SESSION['user_id'] ?? null;
                 <div class="order-card order-summary-card">
                     <h2>Order Summary</h2>
                     <div class="summary-product">
+                        <?php foreach ($cart_items as $item): ?>
                         <div class="product-info">
-                            <span class="category-label">Category</span>
-                            <span class="product-name">Product name</span>
-                            <span class="product-meta">Qty: x</span>
-                            <span class="product-meta">45.00$</span>
+                            <span class="category-label"><?= htmlspecialchars($item['category_product']) ?></span>
+                            <span class="product-name"><?= htmlspecialchars($item['name_product']) ?></span>
+                            <span class="product-meta">Qty: <?= $item['qty'] ?></span>
+                            <span class="product-meta"><?= number_format($item['price_product'] * $item['qty'], 2) ?>€</span>
                         </div>
+                        <?php endforeach; ?>
                     </div>
 
                     <div class="summary-details">
                         <div class="summary-line">
                             <span>Subtotal</span>
-                            <span>45.00$</span>
+                            <span><?= number_format($subtotal, 2) ?>€</span>
                         </div>
                         <div class="summary-line">
                             <span>Shipping</span>
-                            <span>5.00$</span>
+                            <span><?= number_format($shipping, 2) ?>€</span>
                         </div>
                         <div class="summary-line">
                             <span>Tax</span>
-                            <span>2.00$</span>
+                            <span><?= number_format($tax, 2) ?>€</span>
                         </div>
                     </div>
 
                     <div class="summary-total">
                         <span>Total</span>
-                        <span>52.00$</span>
+                        <span><?= number_format($total, 2) ?>€</span>
                     </div>
 
-                    <button class="confirm-btn">Confirm Order</button>
+                    <?php foreach ($cart_items as $item): ?>
+                        <input type="hidden" name="items[<?= $item['id_product'] ?>]" value="<?= $item['qty'] ?>">
+                    <?php endforeach; ?>
+                    <input type="hidden" name="total_order" value="<?= $total ?>">
+
+                    <button type="submit" class="confirm-btn">Confirm Order</button>
                 </div>
             </div>
         </div>
+    </form>
     </main>
 
 <?php include 'includes/footer.php'; ?>
