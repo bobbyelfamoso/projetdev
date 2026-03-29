@@ -82,17 +82,15 @@ $total = $subtotal + $shipping + $tax;
                 <div class="order-card shadow-card payment-section">
                     <h2>Payment</h2>
                     <div class="payment-options">
-                        <input type="radio" name="payment_method" value="paypal" id="paypal" hidden>
-                        <label for="paypal" class="payment-opt <?= $error ? 'error' : '' ?>">
-                            <img src="img/PayPal_Logo2014.png" alt="PayPal">
+                        <button type="button" name="payment_method" value="paypal" class="payment-opt <?= $error ? 'error' : '' ?>">
+                            <img src="img/Paypal_Logo2014.png" alt="PayPal">
                             <span>PayPal</span>
-                        </label>
+                        </button>
 
-                        <input type="radio" name="payment_method" value="card" id="card" hidden>
-                        <label for="card" class="payment-opt <?= $error ? 'error' : '' ?>">
+                        <button type="button" name="payment_method" value="card" class="payment-opt <?= $error ? 'error' : '' ?>">
                             <img src="img/Logo_CB-1-1024x503.png" alt="Credit Card">
                             <span>Credit Card</span>
-                        </label>
+                        </button>
                     </div>
                     <?php if ($error === 'no_payment'): ?>
                         <p class="payment-error">Please select a payment method</p>
@@ -145,5 +143,24 @@ $total = $subtotal + $shipping + $tax;
         </div>
     </form>
 </main>
+
+<script>
+document.querySelectorAll('.payment-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.payment-opt').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        let input = document.getElementById('selected_payment');
+        if (!input) {
+            input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'payment_method';
+            input.id = 'selected_payment';
+            document.querySelector('.shipping-form').appendChild(input);
+        }
+        input.value = btn.value;
+    });
+});
+</script>
 
 <?php include 'includes/footer.php'; ?>

@@ -225,7 +225,8 @@ h3 {
 
 .summary-product {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 1rem;
     padding-bottom: 1.5rem;
     border-bottom: 1px solid #eee;
     margin-bottom: 1.5rem;
@@ -293,6 +294,12 @@ h3 {
 .payment-opt.error {
     outline: 2px solid #e74c3c;
 }
+
+.payment-opt.active {
+    border: 2px solid #2E4F21;
+    background-color: #f0f7f0;
+}
+
 .payment-error {
     color: #e74c3c;
     font-size: 0.9rem;
