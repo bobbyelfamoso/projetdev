@@ -18,8 +18,8 @@
         <a href="landingpage.php">Our Selection</a>
         <a href="landingpage.php">Our Story</a>
         <a href="shopping.php">Shopping</a>
-        <?php if ($user_id): ?>
-            <a href="api/session/logout.php">Logout</a>
+        <?php if (isset($_SESSION['user_id'])): ?>
+        <a href="api/session/logout.php">Logout</a>
         <?php else: ?>
             <a href="login.php">Login</a>
         <?php endif; ?>
