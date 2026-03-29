@@ -1,5 +1,5 @@
 <?php
-session_start();
+include __DIR__ . '/includes/init.php';
 
 header('Content-Type: application/json');
 

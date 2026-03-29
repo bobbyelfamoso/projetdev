@@ -1,7 +1,7 @@
 <?php
 
+include __DIR__ . '/../../includes/init.php';
 include __DIR__ . '/../../includes/db.php';
-session_start();
 
 $user_id = $_SESSION['user_id'] ?? null;
 $id_cart_item = $_POST['id_cart_item'] ?? null;
