@@ -1,26 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pure Matcha - About Us</title>
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/aboutus.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <header class="header about-header">
-        <div class="header-nav">
-            <a href="landingpage.php" class="nav-link">
-                <p>Services</p>
-            </a>
-            <button class="shop-btn" onclick="location.href='shopping.php'">Shop here</button>
-        </div>
-    </header>
-
+<?php
+include 'includes/init.php';
+$page_title = 'About Us - Pure Matcha';
+$page_css = 'aboutus';
+?>
+<?php include 'includes/header-alt.php'; ?>
     <main>
         <section class="about-hero">
             <div class="hero-content">

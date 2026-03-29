@@ -2,8 +2,6 @@
 include 'includes/init.php';
 $page_title = 'FAQ - Pure Matcha';
 $page_css = 'faq';
-include 'includes/db.php';
-$user_id = $_SESSION['user_id'] ?? null;
 ?>
 <?php include 'includes/header.php'; ?>
 
