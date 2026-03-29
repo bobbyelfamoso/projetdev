@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . '/includes/init.php';
+include __DIR__ . '/../includes/init.php';
 
 header('Content-Type: application/json');
 

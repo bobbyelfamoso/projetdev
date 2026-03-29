@@ -27,7 +27,11 @@ if ($user_id) {
                 <?php if (empty($cart_items)): ?>
                     <div class="empty-cart-message">
                         <p>Your cart is empty</p>
-                        <a href="shopping.php">Continue Shopping</a>
+                        <div class="back-link">
+                            <a href="shopping.php">
+                            <span class="arrow">↩</span> Continue Shopping
+                            </a>
+                        </div>
                     </div>
                 <?php else: ?>
                     <?php 
