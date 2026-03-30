@@ -50,31 +50,31 @@ $user_id = $_SESSION['user_id'] ?? null;
 
                 <div class="form-card">
                     <h2>Report an Issue</h2>
-                    <form class="report-form">
+                    <form class="report-form" method="POST" action="api/sav/create.php">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="order-id">Order ID</label>
-                                <input type="text" id="order-id" placeholder="">
+                                <input type="text" id="order-id" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="issue-type">Issue Type</label>
-                                <input type="text" id="issue-type" placeholder="">
+                                <input type="text" id="issue-type" placeholder="" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="">
+                            <input type="email" id="email" placeholder=""required>
                         </div>
 
                         <div class="form-group">
                             <label for="address">Adress</label>
-                            <input type="text" id="address" placeholder="">
+                            <input type="text" id="address" placeholder=""required>
                         </div>
 
                         <div class="form-group">
                             <label for="description">Detailed Description</label>
-                            <textarea id="description"></textarea>
+                            <textarea id="description" required></textarea>
                             <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
                         </div>
 
