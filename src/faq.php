@@ -107,7 +107,7 @@ $page_css = 'faq';
         question.addEventListener('click', function() {
             var item = question.closest('.faq-item');
             item.classList.toggle('expanded');
-            var icon = question.querySelector('.icon plus');
+            var icon = question.querySelector('.icon');
             if (item.classList.contains('expanded')) {
                 icon.textContent = '-';
             } else {
