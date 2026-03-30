@@ -75,6 +75,7 @@ $user_id = $_SESSION['user_id'] ?? null;
                         <div class="form-group">
                             <label for="description">Detailed Description</label>
                             <textarea id="description"></textarea>
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
                         </div>
 
                         <button type="submit" class="submit-btn">Submit</button>
