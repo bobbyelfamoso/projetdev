@@ -14,25 +14,25 @@ $user_id = $_SESSION['user_id'] ?? null;
             <div class="contact-grid">
                 <div class="message-card">
                     <h2>Send us a message</h2>
-                    <form class="contact-form">
+                    <form class="contact-form" method="POST" action="api/contact/send.php">
                         <div class="form-group">
                             <label for="full-name">Full Name</label>
-                            <input type="text" id="full-name" placeholder="">
+                            <input type="text" id="full-name" name="full_name" placeholder="">
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="">
+                            <input type="email" id="email" name="email" placeholder="">
                         </div>
 
                         <div class="form-group">
                             <label for="subject">Subject</label>
-                            <input type="text" id="subject" placeholder="">
+                            <input type="text" id="subject" name="subject" placeholder="">
                         </div>
 
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message"></textarea>
+                            <textarea id="message" name="message"></textarea>
                         </div>
 
                         <button type="submit" class="send-btn">Send</button>
