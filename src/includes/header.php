@@ -19,7 +19,13 @@
         <a href="landingpage.php">Our Story</a>
         <a href="shopping.php">Shopping</a>
         <?php if (isset($_SESSION['user_id'])): ?>
-        <a href="api/session/logout.php">Logout</a>
+        <div class="dropdown">
+            <a href="#" class="dropdown-toggle">Mon Compte ▼</a>
+            <div class="dropdown-menu">
+                <a href="my-orders.php">Mes Commandes</a>
+                <a href="api/session/logout.php">Déconnexion</a>
+            </div>
+        </div>
         <?php else: ?>
             <a href="login.php">Login</a>
         <?php endif; ?>
