@@ -62,32 +62,40 @@ $user_id = $_SESSION['user_id'] ?? null;
 
                     <div class="product1">
                         <div class="product-img">
-                            <a href="Pdescription.php?id=<?= htmlspecialchars($product['id_product']) ?>">
-                                <img src="<?= htmlspecialchars($product['image_path']) ?>"
-                                    alt="<?= htmlspecialchars($product['name_product']) ?>">
+                            <a href="Pdescription.php?id=<?= $product['id_product'] ?>">
+                                <img src="<?= $product['image_path'] ?>"
+                                    alt="<?= $product['name_product'] ?>">
                             </a>
                         </div>
 
                         <div class="productinfo">
                             <span class="category">
-                                <?= htmlspecialchars($product['category_product']) ?>
+                                <?=$product['category_product']?>
                             </span>
                             <h3>
-                                <?= htmlspecialchars($product['name_product']) ?>
+                                <?=$product['name_product']?>
                             </h3>
                             <p>
-                                <?= htmlspecialchars($product['short_description']) ?>
+                                <?=$product['short_description'] ?>
                             </p>
 
                             <div class="productfooter">
                                 <span class="price">
-                                    <?= htmlspecialchars($product['price_product']) ?>€
+                                    <?=$product['price_product']?>€
                                 </span>
+
+                                <?php if ($user_id): ?>
                                 <form method="POST" action="api/cart/create.php" style="display:inline;">
                                     <input type="hidden" name="product_id"
-                                        value="<?= htmlspecialchars($product['id_product']) ?>">
+                                        value="<?= $product['id_product'] ?>">
                                     <button type="submit" class="add-btn">Add to Cart</button>
                                 </form>
+                                <?php else: ?>
+                                    <button type="button" class="add-btn js-add-to-cart" data-id="<?= $product['id_product'] ?>">Add to Cart</button>
+
+                                <?php endif; ?>
+
+
                             </div>
                         </div>
                     </div>

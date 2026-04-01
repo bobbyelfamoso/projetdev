@@ -104,8 +104,8 @@ $total = $subtotal + $shipping + $tax;
                     <div class="summary-product">
                         <?php foreach ($cart_items as $item): ?>
                         <div class="product-info">
-                            <span class="category-label"><?= htmlspecialchars($item['category_product']) ?></span>
-                            <span class="product-name"><?= htmlspecialchars($item['name_product']) ?></span>
+                            <span class="category-label"><?= $item['category_product'] ?></span>
+                            <span class="product-name"><?= $item['name_product'] ?></span>
                             <span class="product-meta">Qty: <?= $item['qty'] ?></span>
                             <span class="product-meta"><?= number_format($item['price_product'] * $item['qty'], 2) ?>€</span>
                         </div>

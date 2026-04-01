@@ -57,10 +57,10 @@ $order_items = $stmt->fetchAll();
                     ?>
                     <div class="cart-item">
                         <div class="item-image">
-                            <img src="<?= htmlspecialchars($item['image_path']) ?>" alt="<?= htmlspecialchars($item['name_product']) ?>">
+                            <img src="<?= $item['image_path'] ?>" alt="<?= $item['name_product'] ?>">
                         </div>
                         <div class="item-details">
-                            <h2><?= htmlspecialchars($item['name_product']) ?></h2>
+                            <h2><?= $item['name_product'] ?></h2>
                             <span class="item-id">ID: <?= $item['id_product'] ?></span>
                             <span class="item-price-label">Price: <?= number_format($item['price_product'], 2) ?>€</span>
                         </div>

@@ -19,7 +19,7 @@ if (!$product) {
     exit;
 }
 
-$page_title = htmlspecialchars($product['name_product']) . ' - Pure Matcha';
+$page_title = $product['name_product'] . ' - Pure Matcha';
 $page_css = 'Pdescription';
 ?>
 <?php include 'includes/header.php'; ?>
@@ -31,20 +31,20 @@ $page_css = 'Pdescription';
             </a>
         </div>
 
-        <h1 class="product-big-title"><?= htmlspecialchars($product['category_product']) ?></h1>
+        <h1 class="product-big-title"><?= $product['category_product'] ?></h1>
 
         <div class="product-hero">
             <div class="product-image-section">
                 <div class="decorative-box"></div>
-                <img src="<?= htmlspecialchars($product['image_path']) ?>" alt="<?= htmlspecialchars($product['name_product']) ?>" class="product-img">
+                <img src="<?= $product['image_path'] ?>" alt="<?= $product['name_product'] ?>" class="product-img">
             </div>
 
             <div class="product-info-section">
                 <div class="info-card">
-                    <span class="category-label"><?= htmlspecialchars($product['category_product']) ?></span>
-                    <h2 class="product-title"><?= htmlspecialchars($product['name_product']) ?></h2>
+                    <span class="category-label"><?= $product['category_product'] ?></span>
+                    <h2 class="product-title"><?= $product['name_product'] ?></h2>
                     <p class="product-desc">
-                        <?= htmlspecialchars($product['long_description']) ?>
+                        <?= $product['long_description'] ?>
                     </p>
                 </div>
 
@@ -54,7 +54,7 @@ $page_css = 'Pdescription';
                 </div>
 
                 <div class="purchase-section">
-                    <span class="price"><?= htmlspecialchars($product['price_product']) ?>$</span>
+                    <span class="price"><?= $product['price_product'] ?>€</span>
                     <div class="actions">
                         <button class="wishlist-btn">
                             <svg viewBox="0 0 24 24" width="24" height="24">
@@ -72,7 +72,7 @@ $page_css = 'Pdescription';
         <section class="details-section">
             <div class="usage-guide">
                 <h3>How to use</h3>
-                <p><?= htmlspecialchars($product['short_description']) ?></p>
+                <p><?= $product['short_description'] ?></p>
             </div>
 
             <div class="product-details-list">
