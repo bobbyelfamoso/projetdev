@@ -42,8 +42,7 @@ $user_id = $_SESSION['user_id'] ?? null;
                             <span>0€</span>
                             <span id="price-value">100€</span>
                         </div>
-                        <input type="range" min="0" max="100" value="100" class="price-slider"
-                            oninput="updatePrice(this.value)">
+                        <input type="range" min="0" max="100" value="0" class="price-slider" id="theslide">
                     </div>
                 </div>
             </aside>
@@ -108,7 +107,8 @@ $user_id = $_SESSION['user_id'] ?? null;
         </div>
 
     </section>
-
+<script src="js/shopping.js"></script>
+<script src="js/cart-local.js"></script>
 </main>
 
 <?php include 'includes/footer.php'; ?>
