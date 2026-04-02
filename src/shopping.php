@@ -4,6 +4,13 @@ $page_title = 'Shopping - Pure Matcha';
 $page_css = 'shopping';
 include 'includes/db.php';
 $user_id = $_SESSION['user_id'] ?? null;
+$category = $_GET['category'] ?? null;
+if ($category) {
+    $stmt = $pdo->prepare("SELECT * FROM products WHERE category_product = ?");
+    $stmt->execute([$category]);
+} else {
+    $stmt = $pdo->query("SELECT * FROM products");
+}
 ?>
 <?php include 'includes/header.php'; ?>
 
@@ -39,7 +46,6 @@ $user_id = $_SESSION['user_id'] ?? null;
                     <h3>Price Range</h3>
                     <div class="price-slider-container">
                         <div class="price-labels">
-                            <span>0€</span>
                             <span id="price-value">100€</span>
                         </div>
                         <input type="range" min="0" max="100" value="0" class="price-slider" id="theslide">
@@ -51,8 +57,6 @@ $user_id = $_SESSION['user_id'] ?? null;
         <div class="products">
 
             <?php
-            $stmt = $pdo->query("SELECT * FROM products");
-
             if (!$stmt) {
                 echo "<p>Erreur lors de la récupération des produits.</p>";
             } else {
