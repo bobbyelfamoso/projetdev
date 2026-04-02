@@ -1,8 +1,5 @@
 <?php
-include 'includes/init.php';
-$page_title = '...';
-$page_css = '...';
-include 'includes/db.php';
+include 'db.php';
 
 $cart_count = 0;
 if (isset($_SESSION['user_id'])) {
