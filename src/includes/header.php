@@ -24,6 +24,7 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
+<script src="js/header.js"></script>
 
 <header class="firstnavbar1">
     <nav class="firstnavbar">
@@ -33,7 +34,7 @@ if (isset($_SESSION['user_id'])) {
         <?php if (isset($_SESSION['user_id'])): ?>
         <div class="dropdown">
             <a href="#" class="dropdown-toggle">Mon Compte ▼</a>
-            <div class="dropdown-menu">
+            <div id="drop" class="dropdown-menu">
                 <a href="my-orders.php">Mes Commandes</a>
                 <a href="api/session/logout.php">Déconnexion</a>
             </div>
