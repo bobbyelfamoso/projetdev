@@ -35,10 +35,27 @@ if ($category) {
                 <div class="filter-section">
                     <h3>Categories</h3>
                     <ul class="filter-list">
-                        <li class="active">All Products</li>
-                        <li>Ceremonial Grade</li>
-                        <li>Culinary Grade</li>
-                        <li>Accessories</li>
+                        <li class="<?= !$category ? 'active' : '' ?>">
+                            <a href="shopping.php">All Products</a>
+                        </li>
+                        <li class="<?= $category == 'Ceremonial Grade' ? 'active' : '' ?>">
+                            <a href="shopping.php?category=Ceremonial Grade">Ceremonial Grade</a>
+                        </li>
+                        <li class="<?= $category == 'Limited Editions' ? 'active' : '' ?>">
+                            <a href="shopping.php?category=Limited Editions">Limited Editions</a>
+                        </li>
+                        <li class="<?= $category == 'Discover' ? 'active' : '' ?>">
+                            <a href="shopping.php?category=Discover">Discover</a>
+                        </li>
+                        <li class="<?= $category == 'Best Sellers' ? 'active' : '' ?>">
+                            <a href="shopping.php?category=Best Sellers">Best Sellers</a>
+                        </li>
+                        <li class="<?= $category == 'Accessories' ? 'active' : '' ?>">
+                            <a href="shopping.php?category=Accessories">Accessories</a>
+                        </li>
+                        <li class="<?= $category == 'Bundle & Offers' ? 'active' : '' ?>">
+                            <a href="shopping.php?category=Bundle & Offers">Bundle & Offers</a>
+                        </li>
                     </ul>
                 </div>
 

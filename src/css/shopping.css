@@ -165,8 +165,16 @@ h3 {
   font-weight: 500;
 }
 
+.filter-list li a {
+  color: #666;
+  text-decoration: none;
+  display: block;
+}
+
 .filter-list li:hover,
-.filter-list li.active {
+.filter-list li:hover a,
+.filter-list li.active,
+.filter-list li.active a {
   color: #2e4f21;
 }
 
