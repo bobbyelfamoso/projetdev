@@ -37,9 +37,9 @@
 
 <header class="secnavbar1">
     <div class="secnavbar">
-        <a>Discover</a>
-        <a>Best Sellers</a>
-        <a>Limited Editions</a>
-        <a>Bundle & Offers</a>
+        <a href="shopping.php?category=Discover">Discover</a>
+        <a href="shopping.php?category=Best Sellers">Best Sellers</a>
+        <a href="shopping.php?category=Limited Editions">Limited Editions</a>
+        <a href="shopping.php?category=Bundle & Offers">Bundle & Offers</a>
     </div>
 </header>
