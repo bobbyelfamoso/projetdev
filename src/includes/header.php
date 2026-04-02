@@ -1,3 +1,13 @@
+<?php
+$cart_count = 0;
+if (isset($_SESSION['user_id'])) {
+    $stmt = $pdo->prepare("SELECT SUM(qty) FROM cart_items WHERE id_user = ??");
+    $stmt->execute([$_SERVER['user_id']]);
+    $cart_count = $stmt->fetchColumn() ?? 0;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,6 +41,11 @@
         <?php endif; ?>
         <a href="cart.php" class="cart-link">
             <img src="img/Cart-Icon.png" class="cart-icon">
+             <?php if (isset($_SESSION['user_id']) && $cart_count > 0): ?>
+                <span class="cart-count"><?= $cart_count ?></span>
+            <?php elseif (!isset($_SESSION['user_id'])): ?>
+                <span class="cart-count" id="visitor-cart-count"></span>
+            <?php endif; ?>
         </a>
     </nav>
 </header>
