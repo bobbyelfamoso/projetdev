@@ -38,7 +38,6 @@
 <header class="secnavbar1">
     <div class="secnavbar">
         <a>Discover</a>
-        <a>New In</a>
         <a>Best Sellers</a>
         <a>Limited Editions</a>
         <a>Bundle & Offers</a>
