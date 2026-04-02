@@ -7,7 +7,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 $user_id = $_SESSION['user_id'];
 $email = $_POST['email'] ?? '';
-$subject_sav = $_POST['subject_sav'] ?? '';
+$subject_sav = $_POST['description'] ?? '';
 if (empty($email) || empty($subject_sav)) {
     header('Location: ../../refund.php?error=missing_fields');
     exit;

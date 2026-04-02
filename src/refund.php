@@ -54,28 +54,28 @@ $user_id = $_SESSION['user_id'] ?? null;
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="order-id">Order ID</label>
-                                <input type="text" id="order-id" placeholder="" required>
+                                <input type="text" name="order_id" id="order-id" placeholder="" required>
                             </div>
                             <div class="form-group">
                                 <label for="issue-type">Issue Type</label>
-                                <input type="text" id="issue-type" placeholder="" required>
+                                <input type="text" name="issue-type" id="issue-type" placeholder="" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder=""required>
+                            <input type="email" name="email" id="email" placeholder=""required>
                         </div>
 
                         <div class="form-group">
                             <label for="address">Adress</label>
-                            <input type="text" id="address" placeholder=""required>
+                            <input type="text" name="address" id="address" placeholder=""required>
                         </div>
 
                         <div class="form-group">
                             <label for="description">Detailed Description</label>
-                            <textarea id="description" required></textarea>
-                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+                            <textarea name="description" id="description" required></textarea>
+                            <input type="file" id="image" name="image" accept="image/png, image/jpeg" />
                         </div>
 
                         <button type="submit" class="submit-btn">Submit</button>
