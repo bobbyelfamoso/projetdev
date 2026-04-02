@@ -3,9 +3,9 @@ include 'db.php';
 
 $cart_count = 0;
 if (isset($_SESSION['user_id'])) {
-    $stmt = $pdo->prepare("SELECT SUM(qty) FROM cart_items WHERE id_user = ?");
-    $stmt->execute([$_SESSION['user_id']]);
-    $cart_count = $stmt->fetchColumn() ?? 0;
+    $cart_stmt = $pdo->prepare("SELECT SUM(qty) FROM cart_items WHERE id_user = ?");
+    $cart_stmt->execute([$_SESSION['user_id']]);
+    $cart_count = $cart_stmt->fetchColumn() ?? 0;
 }
 
 ?>
