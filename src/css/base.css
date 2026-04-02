@@ -387,3 +387,12 @@ h3 {
 .dropdown-menu a:hover {
   background-color: #f1f1f1;
 }
+
+
+.cart-count {
+    font-size: 12px;
+    color: #2e4f21;
+    font-weight: 600;
+    margin-left: 4px;
+    border-radius: 20px;
+}
