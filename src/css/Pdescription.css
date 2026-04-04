@@ -1,5 +1,4 @@
-/* Header Navigation */
-.sacnavbar1 {
+.secnavbar1 {
     display: flex;
     justify-content: center;
     padding: 1.5rem 0;
@@ -19,7 +18,6 @@
     text-decoration: none;
 }
 
-/* Secondary Navigation (Legacy, keeping for safety if needed, but not used by sacnavbar1) */
 .secondary-nav {
     padding: 1rem 0;
     border-bottom: 1px solid #eee;
@@ -41,7 +39,6 @@
     cursor: pointer;
 }
 
-/* Main Container */
 .product-main {
     max-width: 1100px;
     margin: 0 auto;
@@ -70,7 +67,6 @@
     color: #1B3E13;
 }
 
-/* Product Hero Layout */
 .product-hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -79,7 +75,6 @@
     margin-bottom: 4rem;
 }
 
-/* Image Section */
 .product-image-section {
     position: relative;
     display: flex;
@@ -109,7 +104,6 @@
     z-index: 1;
 }
 
-/* Info Section */
 .info-card {
     background-color: #ffffff;
     padding: 0;
@@ -144,7 +138,6 @@
     max-width: 400px;
 }
 
-/* Purchase Section */
 .purchase-section {
     display: flex;
     align-items: center;
