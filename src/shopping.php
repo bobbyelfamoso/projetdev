@@ -1,8 +1,8 @@
 <?php
-include 'includes/init.php';
+include_once 'includes/init.php';
 $page_title = 'Shopping - Pure Matcha';
 $page_css = 'shopping';
-include 'includes/db.php';
+include_once 'includes/db.php';
 $user_id = $_SESSION['user_id'] ?? null;
 $category = $_GET['category'] ?? null;
 if ($category) {
@@ -83,35 +83,36 @@ if ($category) {
                     <div class="product1">
                         <div class="product-img">
                             <a href="Pdescription.php?id=<?= $product['id_product'] ?>">
-                                <img src="<?= $product['image_path'] ?>"
-                                    alt="<?= $product['name_product'] ?>">
+                                <img src="<?= $product['image_path'] ?>" alt="<?= $product['name_product'] ?>">
                             </a>
                         </div>
 
                         <div class="productinfo">
                             <span class="category">
-                                <?=$product['category_product']?>
+                                <?= $product['category_product'] ?>
                             </span>
                             <h3>
-                                <?=$product['name_product']?>
+                                <?= $product['name_product'] ?>
                             </h3>
                             <p>
-                                <?=$product['short_description'] ?>
+                                <?= $product['short_description'] ?>
                             </p>
 
                             <div class="productfooter">
                                 <span class="price">
-                                    <?=$product['price_product']?>€
+                                    <?= $product['price_product'] ?>€
                                 </span>
 
                                 <?php if ($user_id): ?>
-                                <form method="POST" action="api/cart/create.php" style="display:inline;">
-                                    <input type="hidden" name="product_id"
-                                        value="<?= $product['id_product'] ?>">
-                                    <button type="submit" class="add-btn">Add to Cart</button>
-                                </form>
+                                    <form method="POST" action="api/cart/create.php" style="display:inline;">
+                                        <input type="hidden" name="product_id" value="<?= $product['id_product'] ?>">
+                                        <button type="submit" class="add-btn">Add to Cart</button>
+                                    </form>
                                 <?php else: ?>
-                                    <button type="button" class="add-btn js-add-to-cart" data-id="<?= $product['id_product'] ?>">Add to Cart</button>
+                                    <form method="POST" action="api/cart/create.php" style="display:inline;">
+                                        <input type="hidden" name="product_id" value="<?= $product['id_product'] ?>">
+                                        <button type="submit" class="add-btn">Add to Cart</button>
+                                    </form>
 
                                 <?php endif; ?>
 
@@ -128,8 +129,7 @@ if ($category) {
         </div>
 
     </section>
-<script src="js/shopping.js"></script>
-<script src="js/cart-local.js"></script>
+    <script src="js/shopping.js"></script>
 </main>
 
 <?php include 'includes/footer.php'; ?>

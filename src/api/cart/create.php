@@ -1,7 +1,7 @@
 <?php
 
-include __DIR__ . '/../../includes/init.php';
-include __DIR__ . '/../../includes/db.php';
+include_once __DIR__ . '/../../includes/init.php';
+include_once __DIR__ . '/../../includes/db.php';
 $user_id = $_SESSION['user_id'] ?? null;
 $product_id = $_POST['product_id'] ?? null;
 
