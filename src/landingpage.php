@@ -8,7 +8,7 @@ include 'includes/header-alt.php'; ?>
         <h1>Pure Matcha,</h1>
         <h1>Pure Focus</h1>
         <p>Bringing the finest Japanese ceremony to your daily routine since 1952.</p>
-        <button class="hero-btn">Explore our products</button>
+        <button class="hero-btn" href="shopping.php">Explore our products</button>
     </div>
     <div class="img1">
         <img src="img/firstimg.png">
@@ -29,7 +29,7 @@ include 'includes/header-alt.php'; ?>
 
 
     <div class="fourthelem">
-        <button>Explore our products</button>
+        <button href="shopping.php">Explore our products</button>
     </div>
 </div>
 
