@@ -1,9 +1,13 @@
-var imageproduit = document.getElementsByClassName('product-image-section');
+var imageSection = document.querySelector('.product-image-section');
+var imageImg = document.querySelector('.product-img');
 
-addEventListener('mouseover', function () {
-    imageproduit.style.transform = 'scale(1.1)';
-})
+if (imageSection && imageImg) {
+    imageSection.addEventListener('mouseover', function () {
+        imageImg.style.transform = 'scale(1.1)';
+        imageImg.style.transition = 'transform 0.3s ease';
+    });
 
-addEventListener('mouseout', function () {
-    imageproduit.style.transform = 'scale(1)';
-})
+    imageSection.addEventListener('mouseout', function () {
+        imageImg.style.transform = 'scale(1)';
+    });
+}
