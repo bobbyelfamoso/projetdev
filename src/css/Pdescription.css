@@ -1,42 +1,50 @@
 .firstnavbar1 {
+    background-color: #9ccc65;
+    padding: 1.5rem 8rem;
+}
+
+.firstnavbar {
     display: flex;
-    justify-content: center;
-    padding: 1.5rem 0;
-    border-bottom: 2px solid #F4F4F4;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3rem;
+}
+
+.firstnavbar a {
+    font-weight: 500;
+    color: #2e4f21;
+    text-decoration: none;
+}
+
+.secnavbar1 {
+    background-color: #FEFBF6;
+    padding: 1.5rem 8rem;
+    border-bottom: 1px solid #eee;
 }
 
 .secnavbar {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 3rem;
 }
 
 .secnavbar a {
-    color: #1B3E13;
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
+    font-weight: 600;
+    color: #2e4f21;
     text-decoration: none;
 }
 
-.secondary-nav {
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
+.cart-icon {
+    width: 28px;
+    height: auto;
+    display: block;
 }
 
-.secondary-nav ul {
-    list-style: none;
+.cart-link {
     display: flex;
-    justify-content: center;
-    gap: 2.5rem;
-    padding: 0;
-    margin: 0;
-}
-
-.secondary-nav li {
-    color: #2E4F21;
-    font-weight: 700;
-    font-size: 0.95rem;
-    cursor: pointer;
+    align-items: center;
+    text-decoration: none;
 }
 
 .product-main {
@@ -81,7 +89,6 @@
     justify-content: center;
     align-items: center;
 }
-
 
 .product-img {
     width: 380px;
@@ -157,27 +164,6 @@
     gap: 1rem;
 }
 
-.wishlist-btn {
-    background-color: #A3C586;
-    border: none;
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.wishlist-btn:hover {
-    transform: scale(1.1);
-}
-
-.wishlist-btn svg path {
-    fill: #1B3E13;
-}
-
 .add-to-cart-btn {
     background-color: #F28C28;
     color: white;
@@ -196,7 +182,6 @@
     transform: translateY(-2px);
 }
 
-/* Details Section */
 .details-section {
     display: flex;
     flex-direction: column;
@@ -242,7 +227,6 @@
     color: #2E4F21;
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .product-hero {
         grid-template-columns: 1fr;
@@ -259,11 +243,5 @@
 
     .decorative-box {
         display: none;
-    }
-
-    .secondary-nav ul {
-        flex-wrap: wrap;
-        gap: 1.5rem;
-        padding: 0 1rem;
     }
 }
