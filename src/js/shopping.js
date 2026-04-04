@@ -16,3 +16,17 @@ slider.oninput = function () {
     })
 
 };
+
+var imageImg = document.querySelector('.product-img');
+
+if (imageImg) {
+    imageImg.addEventListener('mouseover', function () {
+        imageImg.style.transform = 'scale(1.1)';
+        imageImg.style.transition = 'transform 0.3s ease';
+    });
+
+    imageImg.addEventListener('mouseout', function () {
+        imageImg.style.transform = 'scale(1)';
+    });
+}
+
