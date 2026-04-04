@@ -22,7 +22,11 @@ if ($user_id) {
     <main class="cart-main">
         <div class="cart-card">
             <h1 class="cart-title">Your Cart</h1>
-
+           
+            <?php if (!$user_id): ?>
+                <div id="visitor-cart"></div>
+                <script src="js/cart-display.js"></script>
+            <?php endif; ?>
             <div class="cart-items">
                 <?php if (empty($cart_items)): ?>
                     <div class="empty-cart-message">
