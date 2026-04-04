@@ -49,8 +49,7 @@ $page_css = 'Pdescription';
             </div>
 
             <div class="ingredients-section">
-                <p><strong>Ingredients :</strong> Camellia Sinensis Leaf Powder, L-Theanine, Natural Caffeine,
-                    Polyphenols, Catechins</p>
+                <p><strong>Ingredients :</strong> <?= $product['ingredients'] ?? 'Pure Matcha Powder' ?></p>
             </div>
 
             <div class="purchase-section">
@@ -74,9 +73,9 @@ $page_css = 'Pdescription';
         <div class="product-details-list">
             <h3>Product's details</h3>
             <ul>
-                <li><strong>Weight:</strong> 30g</li>
-                <li><strong>Origin:</strong> Japan</li>
-                <li><strong>Shelf life:</strong> 12 months</li>
+                <li><strong>Weight:</strong> <?= $product['weight'] ?? '30g' ?></li>
+                <li><strong>Origin:</strong> <?= $product['origin'] ?? 'Japan' ?></li>
+                <li><strong>Shelf life:</strong> <?= $product['shelf_life'] ?? '12 months' ?></li>
             </ul>
         </div>
     </section>
