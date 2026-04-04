@@ -86,6 +86,8 @@ $page_css = 'Pdescription';
             </ul>
         </div>
     </section>
+    <script src="js/product.js"></script>
+
 </main>
 
 <?php include 'includes/footer.php'; ?>
