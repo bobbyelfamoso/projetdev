@@ -31,7 +31,7 @@ for (var i = 0; i < toutesLesImages.length; i++) {
 
 var touslesboutons = document.querySelectorAll('.add-btn');
 for (var i = 0; i < touslesboutons.length; i++) {
-    var image = touslesboutons[i];
+    var addtocart = touslesboutons[i];
     addtocart.addEventListener("mouseover", () => { addtocart.style.background = "#9ccc65"; addtocart.textContent = "I WANT IT!"; });
 
     addtocart.addEventListener("mouseout", () => { addtocart.style.background = "#2e4f21"; addtocart.textContent = "buy me!"; });
