@@ -30,7 +30,8 @@ elseif (!$user_id && isset($_GET['ids'])) {
     }
 
     else {
-header('Location: ../../cart.php');
+        header('Content-Type: application/json');
+        echo json_encode([]);
     }
 
 
