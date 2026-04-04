@@ -31,7 +31,7 @@ $page_css = 'Pdescription';
         </a>
     </div>
 
-    <h1 class="product-big-title"><?= $product['category_product'] ?></h1>
+    <h1 class="product-big-title"><?= $product['name_product'] ?></h1>
 
     <div class="product-hero">
         <div class="product-image-section">
