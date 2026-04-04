@@ -24,7 +24,6 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <body>
-<script src="js/header.js"></script>
 
 <header class="firstnavbar1">
     <nav class="firstnavbar">
