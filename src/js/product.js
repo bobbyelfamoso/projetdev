@@ -1,4 +1,4 @@
-var imageproduit = document.querySelector('.product-image-section');
+var imageproduit = document.getElementsByClassName('product-image-section');
 
 addEventListener('mouseover', function () {
     imageproduit.style.transform = 'scale(1.1)';
