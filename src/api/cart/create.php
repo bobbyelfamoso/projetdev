@@ -14,7 +14,7 @@ if ($user_id) {
     $stmt = $pdo->prepare("SELECT id_cart_item, qty FROM cart_items WHERE id_user = ? AND id_product = ?");
     $stmt->execute([$user_id, $product_id]);
     $existing_item = $stmt->fetch();
-    
+
     if ($existing_item) {
         $new_qty = $existing_item['qty'] + 1;
         $stmt = $pdo->prepare("UPDATE cart_items SET qty = ? WHERE id_cart_item = ?");
@@ -23,13 +23,16 @@ if ($user_id) {
         $stmt = $pdo->prepare("INSERT INTO cart_items (id_product, id_user, qty) VALUES (?, ?, 1)");
         $stmt->execute([$product_id, $user_id]);
     }
-    
+
     header('Location: ../../cart.php');
     exit;
 }
 
-// TODO: ajout code pour localStorage (non-connecté)
-
-header('Location: ../../cart.php?add=' . $product_id);
+if (!isset($_SESSION['panier'])) {
+    $_SESSION['panier'] = [];
+}
+$_SESSION['panier'][$product_id] = ($_SESSION['panier'][$product_id] ?? 0) + 1;
+header('Location: ../../cart.php');
 exit;
+
 ?>
