@@ -12,9 +12,9 @@ if (imageSection && imageImg) {
     });
 }
 
-let bouton = document.documentElementbyClassName('.add-to-cart-btn');
+let bouton = document.querySelector('.add-to-cart-btn');
 let texteInitial = bouton.textContent;
 
-bouton.addEventListener("mouseover", () => { bouton.style.background = "#9ccc65"; bouton.textContent = "I WANT IT!"; });
+bouton.addEventListener("mouseover", () => { bouton.style.background = "#8a6747ff"; bouton.textContent = "I WANT IT!"; });
 
-bouton.addEventListener("mouseout", () => { bouton.style.background = "#2e4f21"; bouton.textContent = texteInitial; });
+bouton.addEventListener("mouseout", () => { bouton.style.background = "#F28C28"; bouton.textContent = texteInitial; });
