@@ -19,13 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
             html += '<div class="cart-items">';
             
             produits.forEach(p => {
-                const itemQty = panier.find(i => i.id == p.id_product)?.qty || 1;
-                html += `<div class="cart-item">
-                    <img src="${p.image_path}" alt="${p.name_product}">
-                    <h2>${p.name_product}</h2>
-                    <p>Prix: ${p.price_product}€ x ${itemQty} = ${p.price_product * itemQty}€</p>
-                </div>`;
-            });
+            const itemQty = panier.find(i => i.id == p.id_product)?.qty || 1;
+    html += `<div class="cart-item">
+        <div class="item-image"><img src="${p.image_path}" alt="${p.name_product}"></div>
+        <div class="item-details"><h2>${p.name_product}</h2>
+        <span class="item-id">ID: ${p.id_product}</span>
+        <span class="item-price-label">Price: ${p.price_product}€</span></div>
+        <div class="item-actions">
+        <span class="item-total">${p.price_product * itemQty}€</span>
+        </div></div>`;
+});
             
             html += '</div>';
             container.innerHTML = html;
