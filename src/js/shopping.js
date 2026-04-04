@@ -17,16 +17,16 @@ slider.oninput = function () {
 
 };
 
-var imageImg = document.querySelector('.product-img');
-
-if (imageImg) {
-    imageImg.addEventListener('mouseover', function () {
-        imageImg.style.transform = 'scale(1.1)';
-        imageImg.style.transition = 'transform 0.3s ease';
+var toutesLesImages = document.querySelectorAll('.product-img');
+for (var i = 0; i < toutesLesImages.length; i++) {
+    var image = toutesLesImages[i];
+    image.addEventListener('mouseover', function () {
+        this.style.transform = 'scale(1.1)';
+        this.style.transition = 'transform 0.3s ease';
     });
-
-    imageImg.addEventListener('mouseout', function () {
-        imageImg.style.transform = 'scale(1)';
+    image.addEventListener('mouseout', function () {
+        this.style.transform = 'scale(1)';
     });
 }
+
 
