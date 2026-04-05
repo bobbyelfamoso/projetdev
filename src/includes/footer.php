@@ -34,7 +34,7 @@
         <p>© 2025 Pure Matcha. All Rights Reserved</p>
     </div>
 </footer>
-<script src="../js/animations.js"></script>
+<script src="js/animations.js"></script>
 </body>
 
 </html>
