@@ -315,13 +315,27 @@ h3 {
     .order-summary-card {
         position: static;
     }
+    
+    .order-main {
+        padding: 2rem 1rem !important;
+    }
 }
 
-@media (max-width: 600px) {
-
+@media (max-width: 768px) {
+    .order-main {
+        padding: 1rem !important;
+    }
+    .order-card {
+        padding: 1.5rem 1rem !important;
+    }
     .form-row,
     .payment-options {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
     }
-
+    .confirm-btn {
+        width: 100% !important;
+    }
 }

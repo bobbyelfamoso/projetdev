@@ -305,4 +305,33 @@ h3 {
     font-size: 0.9rem;
 }
 
+@media (max-width: 768px) {
+    .cart-main {
+        padding: 1rem !important;
+    }
+    .cart-card {
+        padding: 1.5rem 1rem !important;
+    }
+    .cart-item {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+        gap: 1rem !important;
+    }
+    .item-details {
+        text-align: center;
+        align-items: center;
+        width: 100%;
+    }
+    .item-actions {
+        align-items: center !important;
+        width: 100%;
+        gap: 0.8rem;
+    }
+    .checkout-btn {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
 

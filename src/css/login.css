@@ -192,19 +192,20 @@ hr {
 }
 
 @media (max-width: 768px) {
-  .loginpart {
+  .all {
     flex-direction: column !important;
-    padding: 1rem !important;
+    height: auto !important;
   }
-
-  .cote-gauche,
-  .cote-droit {
+  .cote-gauche, .cote-droit {
     width: 100% !important;
     padding: 1.5rem 1rem !important;
   }
-
+  .cote-gauche {
+    height: 250px;
+  }
   .cote-gauche img {
-    height: 200px;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
   }
 }
