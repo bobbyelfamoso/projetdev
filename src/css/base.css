@@ -312,20 +312,31 @@ h3 {
   .chasu-container,
   .restau-container,
   .youtube-container,
-  .footer-bottom {
+  .footer-bottom,
+  .header-nav,
+  .firstnavbar,
+  .secnavbar {
     flex-direction: column !important;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
+    gap: 1rem !important;
   }
 
   .header,
+  .firstnavbar1,
+  .secnavbar1,
   .main,
   .chasu,
   .restau,
   .youtube,
   .review,
   .footer {
-    padding: 2rem;
+    padding: 1.5rem;
+  }
+
+  .whitescreen h1,
+  .hero h1 {
+    font-size: 36px !important;
   }
 
   .text1,

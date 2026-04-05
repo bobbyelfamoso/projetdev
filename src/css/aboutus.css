@@ -196,11 +196,25 @@
     }
 
     .values-section {
-        grid-template-columns: 1fr;
+        padding: 0 1.5rem;
         gap: 6rem;
     }
 
+    .value-item, .value-item.reverse {
+        flex-direction: column !important;
+        gap: 2rem !important;
+        text-align: center;
+    }
+
+    .value-image, .value-text {
+        width: 100% !important;
+    }
+
+    .value-item:first-child .value-image {
+        margin-top: -3rem; /* Adjusted for mobile */
+    }
+
     .value-image {
-        height: 250px;
+        height: auto;
     }
 }
