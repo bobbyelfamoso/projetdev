@@ -32,7 +32,10 @@ $user_id = $_SESSION['user_id'] ?? null;
 
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message"></textarea>
+                        <textarea id="message" name="message" placeholder="Votre message..."></textarea>
+                        <small id="char-info">
+                            Nombre de caractères : <span id="comptagenum">0</span>
+                        </small>
                     </div>
 
                     <button type="submit" class="send-btn">Send</button>
