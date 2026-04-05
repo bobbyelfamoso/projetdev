@@ -302,4 +302,12 @@ h3 {
         padding: 2rem;
         border-radius: 40px;
     }
-
+}
+@media (max-width: 768px) {
+  .refund-hero, .refund-content {
+    padding: 2rem 1rem !important;
+  }
+  .guarantee-card, .form-card {
+    padding: 1.5rem !important;
+  }
+}

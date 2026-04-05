@@ -254,3 +254,15 @@ h3 {
     display: block;
     margin-top: 5px;
 
+}
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 2rem 1rem !important;
+  }
+  .contact-grid {
+    gap: 2rem !important;
+  }
+  .message-card {
+    padding: 1.5rem !important;
+  }
+}
