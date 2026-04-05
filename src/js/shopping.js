@@ -17,6 +17,7 @@ slider.oninput = function () {
 
 };
 
+// Animation de zoom sur toutes les images des produits au survol
 var toutesLesImages = document.querySelectorAll('.product-img');
 for (var i = 0; i < toutesLesImages.length; i++) {
     var image = toutesLesImages[i];
@@ -29,6 +30,7 @@ for (var i = 0; i < toutesLesImages.length; i++) {
     });
 }
 
+// Changement de texte et de couleur sur tous les boutons "Ajouter au panier"
 var touslesboutons = document.querySelectorAll('.add-btn');
 for (let i = 0; i < touslesboutons.length; i++) {
     let addtocart = touslesboutons[i];

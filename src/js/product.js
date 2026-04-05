@@ -1,3 +1,4 @@
+// Animation de zoom sur l'image principale de la page produit
 var imageSection = document.querySelector('.product-image-section');
 var imageImg = document.querySelector('.product-img');
 
@@ -12,9 +13,18 @@ if (imageSection && imageImg) {
     });
 }
 
+// Changement de texte et de couleur sur l'unique bouton "Ajouter au panier"
 let bouton = document.querySelector('.add-to-cart-btn');
-let texteInitial = bouton.textContent;
+if (bouton) {
+    let texteInitial = bouton.textContent;
 
-bouton.addEventListener("mouseover", () => { bouton.style.background = "#8a6747ff"; bouton.textContent = "I WANT IT!"; });
+    bouton.addEventListener("mouseover", () => { 
+        bouton.style.background = "#8a6747"; 
+        bouton.textContent = "I WANT IT!"; 
+    });
 
-bouton.addEventListener("mouseout", () => { bouton.style.background = "#F28C28"; bouton.textContent = texteInitial; });
+    bouton.addEventListener("mouseout", () => { 
+        bouton.style.background = "#F28C28"; 
+        bouton.textContent = texteInitial; 
+    });
+}
