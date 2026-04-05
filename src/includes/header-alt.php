@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $page_title ?? 'Pure Matcha' ?></title>
-    <link rel="icon" type="image/png" href="img/favicon.png?v=2">
+    <link rel="icon" type="image/png" href="img/favicon1.png?v=1">
     <link rel="stylesheet" href="css/base.css">
     <?php if (isset($page_css)): ?>
         <link rel="stylesheet" href="css/<?= $page_css ?>.css">
