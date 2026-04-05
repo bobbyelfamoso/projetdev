@@ -306,37 +306,79 @@ h3 {
   color: rgba(255, 255, 255, 0.7);
 }
 
+
+
 @media (max-width: 768px) {
-  html, body { overflow-x: hidden !important; width: 100% !important; }
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  .main,
+  .chasu-container,
+  .restau-container,
+  .youtube-container,
+  .footer-bottom,
+  .shoppingpart {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 2rem 1rem !important;
+    gap: 2rem !important;
+  }
+
+  .header,
+  .main,
+  .chasu,
+  .restau,
+  .youtube,
+  .review,
+  .footer {
+    padding: 2rem 1rem !important;
+  }
+
+  .text1,
+  .img1,
+  .text-container,
+  .elem-3,
+  .textbox2,
+  .fourth,
+  .un,
+  .deux,
+  .trois,
+  .quatre {
+    width: 100% !important;
+  }
+
+  .main h1 {
+    font-size: 40px !important;
+  }
+  .whitescreen h1,
+  .hero h1 {
+    font-size: 36px !important;
+  }
+
+  .elem-3-tags,
+  .third,
+  .trois {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
   .firstnavbar, .secnavbar, .header-nav {
     display: flex !important;
     flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    overflow-x: auto !important;
-    justify-content: flex-start !important;
-    gap: 1.5rem !important;
-    padding: 0.5rem 1rem !important;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    padding: 0.5rem !important;
   }
-  .firstnavbar::-webkit-scrollbar, .secnavbar::-webkit-scrollbar, .header-nav::-webkit-scrollbar {
-    display: none;
+  
+  .firstnavbar1, .secnavbar1 {
+    padding: 1.5rem 1rem !important;
   }
-  .firstnavbar1, .secnavbar1, .header, .footer {
-    padding: 1rem !important;
-  }
+
   .footer-grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
-  }
-  main, section, div[class*='-main'], div[class*='-content'], div[class*='-container'], div[class*='-section'], div[class*='-card'], .cote-droit, .cote-gauche {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-    max-width: 100vw !important;
-    box-sizing: border-box !important;
-  }
-  .product-img {
-    height: auto !important;
-    min-height: 250px;
   }
 }

@@ -39,9 +39,12 @@ if ($user_id) {
             <a href="shopping.php">Shopping</a>
             <?php if (isset($_SESSION['user_id'])): ?>
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle">Mon Compte ▼</a>
+                    <div style="display:flex; align-items:center; gap:0.5rem; height: 100%;">
+                        <a href="order.php" style="margin:0; padding:0;">Mon Compte</a>
+                        <span class="dropdown-arrow" style="cursor: pointer; padding: 0.5rem; font-size: 0.8rem; /* Augmente la zone de tap tactile */ ">▼</span>
+                    </div>
                     <div id="drop" class="dropdown-menu">
-                        <a href="my-orders.php">Mes Commandes</a>
+                        <a href="order.php">Mes Commandes</a>
                         <a href="api/session/logout.php">Déconnexion</a>
                     </div>
                 </div>
