@@ -21,6 +21,7 @@ if ($user_id) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $page_title ?? 'Pure Matcha' ?></title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="stylesheet" href="css/base.css">
     <?php if (isset($page_css)): ?>
         <link rel="stylesheet" href="css/<?= $page_css ?>.css">
@@ -36,7 +37,7 @@ if ($user_id) {
             <a href="landingpage.php">Our Selection</a>
             <a href="landingpage.php">Our Story</a>
             <a href="shopping.php">Shopping</a>
-                <?php if (isset($_SESSION['user_id'])): ?>
+            <?php if (isset($_SESSION['user_id'])): ?>
                 <div class="dropdown">
                     <a href="#" class="dropdown-toggle">Mon Compte ▼</a>
                     <div id="drop" class="dropdown-menu">
@@ -44,14 +45,14 @@ if ($user_id) {
                         <a href="api/session/logout.php">Déconnexion</a>
                     </div>
                 </div>
-                <?php else: ?>
+            <?php else: ?>
                 <a href="login.php">Login</a>
-                <?php endif; ?>
+            <?php endif; ?>
             <a href="cart.php" class="cart-link">
                 <img src="img/Cart-Icon.png" class="cart-icon">
-                    <?php if ($cart_count > 0): ?>
+                <?php if ($cart_count > 0): ?>
                     <span class="cart-count"><?= $cart_count ?></span>
-                    <?php endif; ?>
+                <?php endif; ?>
             </a>
         </nav>
     </header>

@@ -1,9 +1,13 @@
-console.log("Le script chargé");
-var body = document.body;
-body.style.opacity = 0;
-body.style.transition = "opacity 1.2s ease-in-out";
+document.body.style.opacity = "0";
 
-window.addEventListener("load", () => {
-    console.log("fade in lancé");
-    body.style.opacity = 1;
-});
+function fadeIn() {
+    console.log("Animation de fondu lancée ! 🍵");
+    document.body.style.transition = "opacity 1.5s ease-in-out";
+    document.body.style.opacity = "1";
+}
+
+if (document.readyState === "complete") {
+    fadeIn();
+} else {
+    window.addEventListener("load", fadeIn);
+}
