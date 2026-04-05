@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $page_title ?? 'Pure Matcha' ?></title>
+    <link rel="icon" type="image/png" href="img/favicon.png?v=2">
     <link rel="stylesheet" href="css/base.css">
     <?php if (isset($page_css)): ?>
         <link rel="stylesheet" href="css/<?= $page_css ?>.css">
     <?php endif; ?>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>

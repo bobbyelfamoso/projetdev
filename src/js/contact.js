@@ -16,3 +16,14 @@ elem2.addEventListener("input", () => {
         elem3.textContent = elem2.value.length;
     }
 })
+
+
+elem2.addEventListener("input", () => {
+    if (elem2.value.length > 120) {
+        elem2.style.border = "2px solid red";
+    }
+    else {
+        elem2.style.border = "2px solid #9ccc65";
+    }
+
+})
