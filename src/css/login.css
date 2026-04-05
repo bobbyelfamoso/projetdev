@@ -190,3 +190,39 @@ hr {
   background-color: #d5f4e6;
   border: 1px solid #2ecc71;
 }
+
+@media (max-width: 768px) {
+  body > div {
+    flex-direction: column !important;
+  }
+  .cote-gauche, .cote-droit {
+    width: 100% !important;
+    min-height: auto;
+  }
+  img {
+    height: 30vh !important;
+  }
+  .cote-droit {
+    padding: 2rem 1rem !important;
+  }
+  .input, .buttons, #message-container {
+    width: 100% !important;
+    max-width: 350px;
+  }
+}@media (max-width: 768px) {
+  html, body { overflow-x: hidden !important; width: 100% !important; }
+  .firstnavbar, .secnavbar, .header-nav {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+    padding: 0.5rem !important;
+  }
+  .firstnavbar1, .secnavbar1, .header, .footer {
+    padding: 1rem !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
