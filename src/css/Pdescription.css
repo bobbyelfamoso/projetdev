@@ -243,11 +243,31 @@
 }
 @media (max-width: 768px) {
   .product-main {
-    padding: 2rem 1rem !important;
+    padding: 1rem !important;
+  }
+  .product-hero {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2rem !important;
+    text-align: center;
+  }
+  .product-image-section {
+    width: 100% !important;
+    display: flex;
+    justify-content: center;
   }
   .product-img {
     height: auto !important;
     min-height: 250px;
     width: 100% !important;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  .decorative-box {
+    display: none !important;
+  }
+  .purchase-section {
+    flex-direction: column;
+    gap: 1.5rem;
   }
 }

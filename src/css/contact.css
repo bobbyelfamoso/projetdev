@@ -255,14 +255,27 @@ h3 {
     margin-top: 5px;
 
 }
+
 @media (max-width: 768px) {
-  .contact-section {
-    padding: 2rem 1rem !important;
-  }
-  .contact-grid {
-    gap: 2rem !important;
-  }
-  .message-card {
-    padding: 1.5rem !important;
-  }
+    .contact-section {
+        padding: 1rem !important;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    .message-card {
+        padding: 1.5rem 1rem !important;
+    }
+
+    .form-row {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+
+    .send-btn {
+        width: 100% !important;
+    }
 }
