@@ -45,7 +45,7 @@ include 'api/cart/read.php';
                                 <form method="POST" action="api/cart/update.php" style="display:inline;">
                                     <input type="hidden" name="id_cart_item" value="<?= $item['id_cart_item'] ?? '' ?>">
                                     <input type="hidden" name="product_id" value="<?= $item['id_product'] ?>">
-                                    <input type="hidden" name="qty" value="<?= max(1, $item['qty'] - 1) ?>">
+                                    <input type="hidden" name="qty" value="<?= $item['qty'] - 1 ?>">
                                     <button type="submit" class="qty-btn">-</button>
                                 </form>
                                 <span class="qty-number"><?= $item['qty'] ?></span>
