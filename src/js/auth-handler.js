@@ -33,7 +33,6 @@ async function login() {
     if (error) {
         showMessage(error.message, "error");
     } else {
-        // Stocker l'user_id dans la session PHP
         const userId = data.user.id;
         await fetch('api/session.php', {
             method: 'POST',
