@@ -335,7 +335,7 @@ Port: 5432
 
 **Problème** : Choix du système de stockage pour le panier des visiteurs (localStorage, cookie, session PHP).
 
-**Solution** : Utiliser les Sessions PHP pour unifier la logique entre visiteurs et utilisateurs connect��s.
+**Solution** : Utiliser les Sessions PHP pour unifier la logique entre visiteurs et utilisateurs connectés.
 
 ---
 
@@ -390,3 +390,5 @@ Ce projet est fictif à des fins éducatives. Aucune license spécifique.
 - Documentation Supabase : https://supabase.com/docs
 - Documentation Render : https://render.com/docs
 - Docker : https://docs.docker.com/
+- W3Schools : https://www.w3schools.com/
+- StackOverflow : https://stackoverflow.com/
