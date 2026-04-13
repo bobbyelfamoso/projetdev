@@ -1,0 +1,59 @@
+CREATE TABLE users (
+    id_user VARCHAR(50) PRIMARY KEY
+);
+
+CREATE TABLE products (
+    id_product INT PRIMARY KEY,
+    category_product VARCHAR(255) NOT NULL,
+    name_product VARCHAR(255) NOT NULL,
+    price_product INT NOT NULL,
+    long_description VARCHAR(255) NOT NULL,
+    short_description VARCHAR(255) NOT NULL,
+    image_path VARCHAR(255) NOT NULL,
+    ingredients TEXT,
+    weight VARCHAR(255),
+    origin VARCHAR(255),
+    shelf_life VARCHAR(255)
+);
+
+CREATE TABLE cart_items (
+    id_cart_item INT PRIMARY KEY,
+    id_user VARCHAR(50),
+    id_product INT,
+    qty INT NOT NULL,
+    FOREIGN KEY (id_user) REFERENCES users(id_user),
+    FOREIGN KEY (id_product) REFERENCES products(id_product)
+);
+
+CREATE TABLE contact_sheet (
+    id_contact INT PRIMARY KEY,
+    full_name VARCHAR(255) NOT NULL,
+    email_contact VARCHAR(255) NOT NULL,
+    message_contact VARCHAR(255) NOT NULL,
+    subject_contact VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE orders (
+    id_commandes INT PRIMARY KEY,
+    created_at DATETIME NOT NULL,
+    total_order DECIMAL(10,2) NOT NULL,
+    id_user VARCHAR(50),
+    FOREIGN KEY (id_user) REFERENCES users(id_user)
+);
+
+CREATE TABLE order_items (
+    id_order_item INT PRIMARY KEY,
+    id_order INT,
+    id_product INT,
+    qty INT NOT NULL,
+    FOREIGN KEY (id_order) REFERENCES orders(id_commandes),
+    FOREIGN KEY (id_product) REFERENCES products(id_product)
+);
+
+CREATE TABLE sav (
+    id_sav INT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL,
+    subject_sav VARCHAR(255) NOT NULL,
+    id_user VARCHAR(50) NOT NULL,
+    FOREIGN KEY (id_user) REFERENCES users(id_user)
+);
