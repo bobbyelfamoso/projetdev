@@ -1,7 +1,5 @@
 # Pure Matcha - Site E-commerce
 
-**URL du site** : https://projetdev-xfrt.onrender.com
-
 ---
 
 ## Description rapide
@@ -75,13 +73,7 @@ Frontend (HTML/CSS/JS)
 
 ### 2.3 API externes
 
-- **Supabase** (API externe) : Authentification par email/mot de passe
-  - Le site communique avec les serveurs Supabase via l'API JavaScript
-  - Connexion : `supabaseClient.auth.signInWithPassword({ email, password })`
-  - Inscription : `supabaseClient.auth.signUp({ email, password })`
-
-Schéma :
-  Votre site → API Supabase (serveur externe) → Vérifie email/password → Retourne user_id
+- **Supabase** : Authentification OAuth (Google)
 
 ---
 
@@ -89,50 +81,36 @@ Schéma :
 
 ```
 projetdev/
-├── .env                          # Variables d'environnement locales
+├── .env                    # Variables d'environnement locales
 ├── .gitignore
-├── .dockerignore
-├── Dockerfile                    # Configuration Docker
-├── README.md                   # Documentation
-│
-├── conceptualisation/           # Documents de conception
-│   ├── db.sql                  # Schéma BDD
-│   ├── finalprojectmcd.jpg    # Schéma MCD
-│   ├── mldtextuel.png         # Schéma MLD
-│   ├── uml.png                # Diagramme UML
-│   ├── projetfigma.png         # Maquette Figma
-│   ├── Looping2.lo1           # Fichier Looping
-│   └── demo.mp4
-│
+├── Dockerfile               # Configuration Docker
+├── conceptualisation/
+│   └── (documents de conception)
 └── src/
-    ├── index.php              # Point d'entrée
-    ├── landingpage.php        # Page d'accueil
-    ├── shopping.php           # Catalogue
-    ├── cart.php             # Panier
-    ├── order.php             # Commande
+    ├── index.php           # Point d'entrée
+    ├── landingpage.php     # Page d'accueil
+    ├── shopping.php       # Catalogue produits
+    ├── cart.php          # Panier
+    ├── order.php         # Commande
     ├── order_confirmation.php
-    ├── my-orders.php         # Historique commandes
-    ├── contact.php           # Formulaire contact
-    ├── refund.php            # Formulaire SAV
-    ├── login.php             # Connexion
-    ├── aboutus.php           # À propos
-    ├── recipes.php           # Recettes
-    ├── faq.php              # FAQ
-    ├── Pdescription.php      # Fiche produit
-    ├── test_db.php           # Test connexion BDD
-    │
-    ├── includes/             # Fichiers communs
-    │   ├── init.php         # Session PHP
-    │   ├── db.php           # Connexion PostgreSQL
-    │   ├── header.php       # En-tête (avec nav)
-    │   └── footer.php       # Pied de page
-    │
-    ├── api/                 # API PHP
+    ├── my-orders.php    # Historique commandes
+    ├── contact.php      # Formulaire contact
+    ├── refund.php       # SAV
+    ├── login.php        # Connexion
+    ├── aboutus.php
+    ├── recipes.php
+    ├── faq.php
+    ├── Pdescription.php  # Fiche produit
+    ├── includes/        # Fichiers communs
+    │   ├── init.php    # Session PHP
+    │   ├── db.php      # Connexion BDD
+    │   ├── header.php # En-tête with nav
+    │   └── footer.php
+    ├── api/            # API PHP
     │   ├── cart/
     │   │   ├── create.php
     │   │   ├── update.php
-    │   │   ├── delete.php
-    │   │   └── read.php
+    │   │   └── delete.php
     │   ├── order/
     │   │   └── create.php
     │   ├── contact/
@@ -141,46 +119,21 @@ projetdev/
     │   │   └── create.php
     │   └── session/
     │       ├── logout.php
-    │       └── .php
-    │
-    ├── css/                 # Styles CSS
+    │       └──.php
+    ├── css/             # Styles CSS
     │   ├── base.css
     │   ├── shopping.css
     │   ├── cart.css
     │   ├── order.css
     │   ├── confirmation.css
-    │   ├── contact.css
-    │   ├── refund.css
-    │   ├── login.css
-    │   ├── aboutus.css
-    │   ├── recipes.css
-    │   ├── faq.css
-    │   └── Pdescription.css
-    │
-    ├── js/                  # Scripts JavaScript
-    │   ├── animations.js     # Animations (rotate, jiggle)
-    │   ├── auth-handler.js  # Auth Supabase
-    │   ├── cart.js         # Dynamisation cart/Pdescription
-    │   ├── contact.js     # Animation form contact
-    │   ├── faq.js         # Validation form contact
-    │   ├── product.js     # Animation footer
-    │   ├── refund.js      # Animation form refund
-    │   └── shopping.js   # Filter prix slider
-    │
-    └── img/                 # Images du projet
-        ├── firstimg.png
-        ├── secondsection.png
-        ├── secondsectionbis.png
-        ├── secondsectionter.png
-        ├── shopping.png
-        ├── sakuramatcha.png
-        ├── matchabamboo.jpg
-        ├── cookingmatcha.png
-        ├── logo.png
-        ├── Cart-Icon.png
-        ├── favicon.png
-        ├── person-smiling.jpg
-        └── [...]
+    │   └── ...
+    ├── js/              # Scripts JavaScript
+    │   ├── animations.js
+    │   ├── cart.js
+    │   ├── contact.js
+    |   |__ 
+    │   └── ...
+    └── img/             # Images du projet
 ```
 
 ---
@@ -392,5 +345,6 @@ Ce projet est fictif à des fins éducatives. Aucune license spécifique.
 - Documentation Supabase : https://supabase.com/docs
 - Documentation Render : https://render.com/docs
 - Docker : https://docs.docker.com/
-- W3Schools : https://www.w3schools.com/
-- StackOverflow : https://stackoverflow.com/
+
+
+petit commit 
